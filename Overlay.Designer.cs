@@ -149,10 +149,10 @@ namespace ValorantStreamOverlay
         private System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.Label rankLabel;
         public System.Windows.Forms.Label rankingLabel;
-        private System.Windows.Forms.PictureBox rankIconBox;
         public System.Windows.Forms.Label recentGame1;
         public System.Windows.Forms.Label recentGame3;
         public System.Windows.Forms.Label recentGame2;
+        public System.Windows.Forms.PictureBox rankIconBox;
     }
 }
 

@@ -30,10 +30,11 @@ namespace ValorantStreamOverlay
         public static string region;
         public static int refreshTimeinSeconds;
 
-        public ValorantOverStream ValorantOver;
-
+        public static ValorantOverStream ValorantOver;
+        public  LogicHandler logic;
         public LogicHandler(ValorantOverStream instance)
         {
+            logic = this;
             ValorantOver = instance;
 
             Trace.Write(referencesLoc);
@@ -54,7 +55,7 @@ namespace ValorantStreamOverlay
             login();
 
             UpdateLatest();
-
+            new RankDetection();
         }
 
         static void ReadConfig()
@@ -90,9 +91,11 @@ namespace ValorantStreamOverlay
                 var authJson = JsonConvert.DeserializeObject(Authentication.Authenticate(cookie, username, password));
                 JToken authObj = JObject.FromObject(authJson);
 
-                string authURL = authObj["response"]["parameters"]["uri"].Value<string>();
-                var access_tokenVar = Regex.Match(authURL, @"access_token=(.+?)&scope=").Groups[1].Value;
-                AccessToken = $"{access_tokenVar}";
+                    string authURL = authObj["response"]["parameters"]["uri"].Value<string>();
+                    var access_tokenVar = Regex.Match(authURL, @"access_token=(.+?)&scope=").Groups[1].Value;
+                    AccessToken = $"{access_tokenVar}";
+             
+
 
                 RestClient client = new RestClient(new Uri("https://entitlements.auth.riotgames.com/api/token/v1"));
                 RestRequest request = new RestRequest(Method.POST);
@@ -148,11 +151,12 @@ namespace ValorantStreamOverlay
             int[] points = new int[3];
 
             dynamic test = matches;
-
+            Console.WriteLine(test);
             int count = 0;
             int i = 0;
             foreach (var game in test)
             {
+                
                 if (game["CompetitiveMovement"] == "MOVEMENT_UNKNOWN")
                 {
                     // not a ranked game
@@ -222,7 +226,7 @@ namespace ValorantStreamOverlay
             {
                 if (game["CompetitiveMovement"] == "MOVEMENT_UNKNOWN")
                 {
-                    // not a ranked game
+                    // not a ranked game; 
                 }
                 else if (game["CompetitiveMovement"] == "PROMOTED")
                 {
@@ -257,7 +261,7 @@ namespace ValorantStreamOverlay
                 if (count >= 3) // 3 recent matches found
                     break;
             }
-
+            //Need to add login :)
             SetChangesToOverlay(points);
         }
 
@@ -266,17 +270,37 @@ namespace ValorantStreamOverlay
             Label[] rankChanges = { ValorantOver.recentGame1, ValorantOver.recentGame2, ValorantOver.recentGame3 };
             for (int i = 0; i < pointchange.Length; i++)
             {
-                if (pointchange[i] < 0)
+                if (pointchange[i] > 0)
                 {
                     //In the case of a demotion or a loss
-                    int change = pointchange[i] * -1;
+                    string change;
+                    if (pointchange[i] <= 9)
+                    {
+                        change = $"0{pointchange[i]}";
+                    }
+                    else
+                    {
+                        change = pointchange[i].ToString();
+                    }
+                    
                     rankChanges[i].ForeColor = Color.Red;
-                    rankChanges[i].Text = change.ToString();
+                    rankChanges[i].Text = change;
                 }
-                else if (pointchange[i] > 0)
+                else if (pointchange[i] < 0)
                 {
+                    int checker = pointchange[i] * -1;
+                    string change;
+                    if (pointchange[i] <= 9)
+                    {
+                        change = $"0{checker}";
+                    }
+                    else
+                    {
+                        change = checker.ToString();
+                    }
+
                     rankChanges[i].ForeColor = Color.LimeGreen;
-                    rankChanges[i].Text = pointchange[i].ToString();
+                    rankChanges[i].Text = change;
                 }
                 else
                 {

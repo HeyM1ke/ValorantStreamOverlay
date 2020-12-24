@@ -83,6 +83,76 @@ namespace ValorantStreamOverlay.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap TX_CompetitiveTier_Large_0 {
+            get {
+                object obj = ResourceManager.GetObject("TX_CompetitiveTier_Large_0", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TX_CompetitiveTier_Large_1 {
+            get {
+                object obj = ResourceManager.GetObject("TX_CompetitiveTier_Large_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TX_CompetitiveTier_Large_10 {
+            get {
+                object obj = ResourceManager.GetObject("TX_CompetitiveTier_Large_10", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TX_CompetitiveTier_Large_11 {
+            get {
+                object obj = ResourceManager.GetObject("TX_CompetitiveTier_Large_11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TX_CompetitiveTier_Large_12 {
+            get {
+                object obj = ResourceManager.GetObject("TX_CompetitiveTier_Large_12", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TX_CompetitiveTier_Large_13 {
+            get {
+                object obj = ResourceManager.GetObject("TX_CompetitiveTier_Large_13", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TX_CompetitiveTier_Large_14 {
+            get {
+                object obj = ResourceManager.GetObject("TX_CompetitiveTier_Large_14", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap TX_CompetitiveTier_Large_15 {
             get {
                 object obj = ResourceManager.GetObject("TX_CompetitiveTier_Large_15", resourceCulture);
@@ -93,9 +163,169 @@ namespace ValorantStreamOverlay.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap TX_CompetitiveTier_Large_16 {
+            get {
+                object obj = ResourceManager.GetObject("TX_CompetitiveTier_Large_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TX_CompetitiveTier_Large_17 {
+            get {
+                object obj = ResourceManager.GetObject("TX_CompetitiveTier_Large_17", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TX_CompetitiveTier_Large_18 {
+            get {
+                object obj = ResourceManager.GetObject("TX_CompetitiveTier_Large_18", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TX_CompetitiveTier_Large_19 {
+            get {
+                object obj = ResourceManager.GetObject("TX_CompetitiveTier_Large_19", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TX_CompetitiveTier_Large_2 {
+            get {
+                object obj = ResourceManager.GetObject("TX_CompetitiveTier_Large_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TX_CompetitiveTier_Large_20 {
+            get {
+                object obj = ResourceManager.GetObject("TX_CompetitiveTier_Large_20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TX_CompetitiveTier_Large_21 {
+            get {
+                object obj = ResourceManager.GetObject("TX_CompetitiveTier_Large_21", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TX_CompetitiveTier_Large_22 {
+            get {
+                object obj = ResourceManager.GetObject("TX_CompetitiveTier_Large_22", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap TX_CompetitiveTier_Large_23 {
             get {
                 object obj = ResourceManager.GetObject("TX_CompetitiveTier_Large_23", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TX_CompetitiveTier_Large_24 {
+            get {
+                object obj = ResourceManager.GetObject("TX_CompetitiveTier_Large_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TX_CompetitiveTier_Large_3 {
+            get {
+                object obj = ResourceManager.GetObject("TX_CompetitiveTier_Large_3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TX_CompetitiveTier_Large_4 {
+            get {
+                object obj = ResourceManager.GetObject("TX_CompetitiveTier_Large_4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TX_CompetitiveTier_Large_5 {
+            get {
+                object obj = ResourceManager.GetObject("TX_CompetitiveTier_Large_5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TX_CompetitiveTier_Large_6 {
+            get {
+                object obj = ResourceManager.GetObject("TX_CompetitiveTier_Large_6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TX_CompetitiveTier_Large_7 {
+            get {
+                object obj = ResourceManager.GetObject("TX_CompetitiveTier_Large_7", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TX_CompetitiveTier_Large_8 {
+            get {
+                object obj = ResourceManager.GetObject("TX_CompetitiveTier_Large_8", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TX_CompetitiveTier_Large_9 {
+            get {
+                object obj = ResourceManager.GetObject("TX_CompetitiveTier_Large_9", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

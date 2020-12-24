@@ -148,10 +148,79 @@
   <data name="TX_CompetitiveTierMovement_Stable" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TX_CompetitiveTierMovement_Stable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="TX_CompetitiveTier_Large_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TX_CompetitiveTier_Large_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TX_CompetitiveTier_Large_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TX_CompetitiveTier_Large_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TX_CompetitiveTier_Large_10" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TX_CompetitiveTier_Large_10.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TX_CompetitiveTier_Large_11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TX_CompetitiveTier_Large_11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TX_CompetitiveTier_Large_12" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TX_CompetitiveTier_Large_12.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TX_CompetitiveTier_Large_13" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TX_CompetitiveTier_Large_13.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TX_CompetitiveTier_Large_14" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TX_CompetitiveTier_Large_14.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="TX_CompetitiveTier_Large_15" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TX_CompetitiveTier_Large_15.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="TX_CompetitiveTier_Large_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TX_CompetitiveTier_Large_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TX_CompetitiveTier_Large_17" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TX_CompetitiveTier_Large_17.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TX_CompetitiveTier_Large_18" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TX_CompetitiveTier_Large_18.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TX_CompetitiveTier_Large_19" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TX_CompetitiveTier_Large_19.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TX_CompetitiveTier_Large_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TX_CompetitiveTier_Large_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TX_CompetitiveTier_Large_20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TX_CompetitiveTier_Large_20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TX_CompetitiveTier_Large_21" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TX_CompetitiveTier_Large_21.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TX_CompetitiveTier_Large_22" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TX_CompetitiveTier_Large_22.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="TX_CompetitiveTier_Large_23" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TX_CompetitiveTier_Large_23.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TX_CompetitiveTier_Large_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TX_CompetitiveTier_Large_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TX_CompetitiveTier_Large_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TX_CompetitiveTier_Large_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TX_CompetitiveTier_Large_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TX_CompetitiveTier_Large_4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TX_CompetitiveTier_Large_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TX_CompetitiveTier_Large_5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TX_CompetitiveTier_Large_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TX_CompetitiveTier_Large_6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TX_CompetitiveTier_Large_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TX_CompetitiveTier_Large_7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TX_CompetitiveTier_Large_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TX_CompetitiveTier_Large_8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TX_CompetitiveTier_Large_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TX_CompetitiveTier_Large_9.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
