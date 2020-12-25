@@ -21,9 +21,13 @@ Welcome to the Tutorial in a way, there is a video and there are instructions la
 
 # Installation
 Step 1: Download Latest Version [here](https://github.com/RumbleMike/ValorStreamOverlay/releases/latest/download/ValorStreamOverlay.zip)
+
 Step 2: Extract Zip file to your perfered location (If you dont know how to do this... well.. google it)
+
 Step 3: Open your extracted folder and make your way over to the `refrences` folder, here you will find a TTF File (Font File) and a Config.Json. Open Config.Json with your respected text editor.
+
 Step 4: Enter your Riot Games Username (One you use to login, not in-game name) and your Riot Games Password.
+
 Step 5: Set your region, please refer to the table below for your region, if your country/region is not on this list please try every location shown in the table.
 | Region Name | Region Prefix |
 | - | - |
