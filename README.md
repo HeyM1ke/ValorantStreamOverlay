@@ -25,7 +25,7 @@ Some External Packages were used to create this project with ease and implement 
 Welcome to the Tutorial in a way, there will be a video soon but, for now there are instructions layed out in text below.
 
 # Installation
-Step 1: Download Latest Version [here](https://github.com/RumbleMike/ValorantStreamOverlay/releases/download/1.0/ValorSteamOverlay.zip)
+Step 1: Download Latest Version [here](https://github.com/RumbleMike/ValorantStreamOverlay/releases/download/0.9/ValorSteamOverlay.zip)
 
 Step 2: Extract Zip file to your perfered location (If you dont know how to do this... well.. google it)
 
