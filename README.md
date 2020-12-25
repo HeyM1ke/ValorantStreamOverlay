@@ -15,6 +15,12 @@
 ## About
 Hey everyone, this program was made after i was bothered every other second on what my rank was. I could have implemented a `!rank` command, but i thought of doing something unique. A program that checks your account every few seconds and sees your current rank and your point movement (still in the air). All of the code is open source, so anyone can check if the program is safe or not as you need to type in your Username and Password in the configuation file. As of writing this, there are no alternatives. I will say it now, i will not verify if alternatives are safe. I know my program is safe, and anyone can check if that reason is vaild.
 
+## External Packages Used
+Some External Packages were used to create this project with ease and implement cool features:
+  - [RestSharp](https://www.nuget.org/packages/RestSharp/)
+  - [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/)
+  - Adding Soon: [AutoUpdater](https://github.com/ravibpatel/AutoUpdater.NET)
+
 ## How to use program
 Welcome to the Tutorial in a way, there is a video and there are instructions layed out in text below.
 [![Watch the video](https://cdn.discordapp.com/attachments/748560845230964869/791905909416787998/tutorialvideothinThumb.png)](https://www.youtube.com/channel/UCtktT28R55pnf25zINI9aJw)
