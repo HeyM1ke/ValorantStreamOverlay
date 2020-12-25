@@ -29,6 +29,8 @@ namespace ValorantStreamOverlay
         public static string password;
         public static string region;
         public static int refreshTimeinSeconds;
+        public Timer relogTimer;
+        public Timer pointTimer;
 
         public static ValorantOverStream ValorantOver;
         public  LogicHandler logic;
@@ -56,6 +58,9 @@ namespace ValorantStreamOverlay
 
             UpdateLatest();
             new RankDetection();
+
+            StartPointRefresh();
+            StartRELOGTimer();
         }
 
         static void ReadConfig()
@@ -135,19 +140,15 @@ namespace ValorantStreamOverlay
         }
 
 
-        void InitialUpdate()
-        {
-
-        }
-
 
         void UpdateLatest()
         {
+            Trace.Write("UPDATING");
             //var test = Task.Run(() => PingCompApiAsync());
             dynamic response = GetCompApiAsync().GetAwaiter().GetResult();
             dynamic matches = response["Matches"];
             //parseResponse(matches);
-
+            Trace.Write("Checkpoint 1");
             int[] points = new int[3];
 
             dynamic test = matches;
@@ -194,7 +195,7 @@ namespace ValorantStreamOverlay
                 if (count >= 3) // 3 recent matches found
                     break;
             }
-
+            Trace.Write("Checkpoint 2");
             SetChangesToOverlay(points);
         }
 
@@ -309,6 +310,37 @@ namespace ValorantStreamOverlay
                 }
             }
         }
+
+
+        private void StartPointRefresh()
+        {
+            pointTimer = new Timer();
+            pointTimer.Tick += new EventHandler(pointTimer_Tick);
+            pointTimer.Interval = refreshTimeinSeconds * 1000;
+            pointTimer.Start();
+        }
+
+        private void pointTimer_Tick(object sender, EventArgs e)
+        {
+            UpdateLatest();
+        }
+
+        private void StartRELOGTimer()
+        {
+            relogTimer = new Timer();
+            relogTimer.Tick += new EventHandler(relogTimer_Tick);
+            relogTimer.Interval = 3605 * 1000;
+            relogTimer.Start();
+            
+        }
+
+        private void relogTimer_Tick(object sender, EventArgs e)
+        {
+            pointTimer.Stop();
+            login();
+            pointTimer.Start();
+        }
+
 
     }
 }
