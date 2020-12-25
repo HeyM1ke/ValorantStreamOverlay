@@ -22,8 +22,7 @@ Some External Packages were used to create this project with ease and implement 
   - Adding Soon: [AutoUpdater](https://github.com/ravibpatel/AutoUpdater.NET)
 
 ## How to use program
-Welcome to the Tutorial in a way, there is a video and there are instructions layed out in text below.
-[![Watch the video](https://cdn.discordapp.com/attachments/748560845230964869/791905909416787998/tutorialvideothinThumb.png)](https://www.youtube.com/channel/UCtktT28R55pnf25zINI9aJw)
+Welcome to the Tutorial in a way, there will be a video soon but, for now there are instructions layed out in text below.
 
 # Installation
 Step 1: Download Latest Version [here](https://github.com/RumbleMike/ValorStreamOverlay/releases/latest/download/ValorStreamOverlay.zip)
