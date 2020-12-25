@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -65,14 +66,23 @@ namespace ValorantStreamOverlay
         }
         void RankParser(int rankNumber)
         {
-            dynamic ranks = rankJson["Ranks"];
-            string rankNameLower = ranks[rankNumber].ToString();
+            //Getting Errors when trying to pull the Json Data.
+            
+            var cloudJsonDeserial = JsonConvert.DeserializeObject(rankJson);
+            JToken cloudJson = JToken.FromObject(cloudJsonDeserial);
+            string rankNameLower = cloudJson["Ranks"][rankNumber.ToString()].Value<string>();
             string rankNameALPHA = rankNameLower.ToUpper();
 
 
             Trace.Write("Setting Rank To Valid Rank Num");
 
-            switch (rankNumber)
+            LogicHandler.ValorantOver.rankingLabel.Text = rankNameALPHA;
+
+            var resource = Properties.Resources.ResourceManager.GetObject("TX_CompetitiveTier_Large_" + rankNumber);
+            Bitmap myImage = (Bitmap)resource;
+            LogicHandler.ValorantOver.rankIconBox.Image = myImage;
+
+            /*switch (rankNumber)
             {
                 case (0):
                     LogicHandler.ValorantOver.rankingLabel.Text = rankNameALPHA;
@@ -175,7 +185,7 @@ namespace ValorantStreamOverlay
                     LogicHandler.ValorantOver.rankIconBox.Image = Properties.Resources.TX_CompetitiveTier_Large_24;
                     break;
 
-            }
+            }*/
         }
 
        

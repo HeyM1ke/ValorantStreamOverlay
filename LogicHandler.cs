@@ -16,6 +16,15 @@ using System.Text.RegularExpressions;
 
 namespace ValorantStreamOverlay
 {
+    class JConfig //for json serialisation 
+    {
+        public string username { get; set; }
+        public string password { get; set; }
+        public string region { get; set; }
+        public int refreshtime { get; set; }
+    }
+
+
     class LogicHandler
     {
         private static string referencesLoc =
@@ -67,6 +76,26 @@ namespace ValorantStreamOverlay
         {
             try
             {
+                //Experiment: Create JSON With code if no file is detected:
+
+                /*if (!File.Exists(Path.Combine(Directory.GetCurrentDirectory(), "references", "config.json")))
+                {
+                    Trace.Write("Creating Json File.");
+                    JConfig configuration = new JConfig()
+                    {
+                        username = "USERNAMEHERE",
+                        password = "PASSWORDHERE",
+                        region = "na",
+                        refreshtime = 10
+
+                    };
+                    File.WriteAllText((Path.Combine(Directory.GetCurrentDirectory(), "references", "config.json")), JsonConvert.SerializeObject(configuration));
+                    MessageBox.Show(
+                        "Config File was not detected, a config file was created and is in your refrences folder. Please fill out the config file.");
+                    Environment.Exit(1);
+                }*/
+                
+                
                 StreamReader r =
                     new StreamReader(Path.Combine(Directory.GetCurrentDirectory(), "references", "config.json"));
                 string json = r.ReadToEnd();
@@ -77,6 +106,12 @@ namespace ValorantStreamOverlay
                 password = localObj["password"].Value<string>();
                 region = localObj["region"].Value<string>();
                 refreshTimeinSeconds = localObj["refreshtime"].Value<int>();
+                if (refreshTimeinSeconds <= 9)
+                {
+                    MessageBox.Show("Refresh Time is too low, please set refresh time to more than 10");
+                    Environment.Exit(1);
+                }
+
             }
             catch (Exception e)
             {
@@ -216,7 +251,7 @@ namespace ValorantStreamOverlay
             return rankedResp.IsSuccessful ? JsonConvert.DeserializeObject<JObject>(rankedResp.Content) : null;
         }
 
-        private void parseResponse(JObject response)
+        /*private void parseResponse(JObject response)
         {
             int[] points = new int[3];
 
@@ -265,7 +300,7 @@ namespace ValorantStreamOverlay
             }
             //Need to add login :)
             SetChangesToOverlay(points);
-        }
+        }*/
 
         private void SetChangesToOverlay(int[] pointchange)
         {
@@ -331,7 +366,7 @@ namespace ValorantStreamOverlay
         {
             relogTimer = new Timer();
             relogTimer.Tick += new EventHandler(relogTimer_Tick);
-            relogTimer.Interval = 3605 * 1000;
+            relogTimer.Interval = 2700 * 1000;
             relogTimer.Start();
             
         }
