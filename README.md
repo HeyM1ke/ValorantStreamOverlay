@@ -17,7 +17,7 @@ Hey everyone, this program was made after i was bothered every other second on w
 
 ## How to use program
 Welcome to the Tutorial in a way, there is a video and there are instructions layed out in text below.
-[![Watch the video](https://cdn.discordapp.com/attachments/748560845230964869/791905909416787998/tutorialvideothinThumb.png)](https://youtu.be/vt5fpE0bzSY)
+[![Watch the video](https://cdn.discordapp.com/attachments/748560845230964869/791905909416787998/tutorialvideothinThumb.png)](https://www.youtube.com/channel/UCtktT28R55pnf25zINI9aJw)
 
 # Installation
 Step 1: Download Latest Version [here](https://github.com/RumbleMike/ValorStreamOverlay/releases/latest/download/ValorStreamOverlay.zip)
