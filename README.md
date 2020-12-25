@@ -50,6 +50,7 @@ For example if your config file looks like this:
 }
 ```
 This means that my region is North America & the overlay will update every 10 seconds.
+
 **DO NOT PUT 1 SECOND, THE API WILL NOT LIKE THAT**
 
 Step 7: Run the Application, you will get an pop up, from Windows Smart Screen. This is normal as this program is not [signed](https://en.wikipedia.org/wiki/Code_signing) `tdlr too complicated and i think it costs money` From here you have a possiblity of getting a popup from microsoft asking you to install something. Install it. It is called the .net Runtime it is the framework that allows the program to run.
