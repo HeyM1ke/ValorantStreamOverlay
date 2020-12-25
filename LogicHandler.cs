@@ -164,13 +164,11 @@ namespace ValorantStreamOverlay
 
                 UserID = useridObj["sub"].Value<string>();
 
-                Console.WriteLine($"Logged in successfully! ");
             }
             catch (Exception e)
             {
-                Trace.WriteLine(e.Message);
-                Console.ReadKey();
-                throw;
+                MessageBox.Show("Your Login was invalid, please check your Config File.");
+                Environment.Exit(1);
             }
         }
 
