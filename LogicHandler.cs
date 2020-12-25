@@ -204,6 +204,7 @@ namespace ValorantStreamOverlay
 
         private async Task<JObject> GetCompApiAsync()
         {
+            
             IRestClient compClient = new RestClient(new Uri($"https://pd.{region}.a.pvp.net/mmr/v1/players/{UserID}/competitiveupdates?startIndex=0&endIndex=20"));
             RestRequest compRequest = new RestRequest(Method.GET);
 
@@ -291,7 +292,7 @@ namespace ValorantStreamOverlay
                 {
                     int checker = pointchange[i] * -1;
                     string change;
-                    if (pointchange[i] <= 9)
+                    if (checker <= 9)
                     {
                         change = $"0{checker}";
                     }
@@ -323,6 +324,7 @@ namespace ValorantStreamOverlay
         private void pointTimer_Tick(object sender, EventArgs e)
         {
             UpdateLatest();
+            new RankDetection();
         }
 
         private void StartRELOGTimer()
@@ -336,7 +338,7 @@ namespace ValorantStreamOverlay
 
         private void relogTimer_Tick(object sender, EventArgs e)
         {
-            pointTimer.Stop();
+            pointTimer.Stop(); 
             login();
             pointTimer.Start();
         }

@@ -44,7 +44,7 @@ namespace ValorantStreamOverlay
             // 
             // backgroundPic
             // 
-            this.backgroundPic.Image = ((System.Drawing.Image)(resources.GetObject("backgroundPic.Image")));
+            this.backgroundPic.Image = Properties.Resources.Background;//((System.Drawing.Image)(resources.GetObject("backgroundPic.Image")));
             this.backgroundPic.Location = new System.Drawing.Point(0, 0);
             this.backgroundPic.Name = "backgroundPic";
             this.backgroundPic.Size = new System.Drawing.Size(315, 120);
@@ -69,7 +69,7 @@ namespace ValorantStreamOverlay
             // rankIconBox
             // 
             this.rankIconBox.BackColor = System.Drawing.Color.Bisque;
-            this.rankIconBox.Image = ((System.Drawing.Image)(resources.GetObject("rankIconBox.Image")));
+            this.rankIconBox.Image = Properties.Resources.TX_CompetitiveTier_Large_14;//((System.Drawing.Image)(resources.GetObject("rankIconBox.Image")));
             this.rankIconBox.Location = new System.Drawing.Point(205, 10);
             this.rankIconBox.Name = "rankIconBox";
             this.rankIconBox.Size = new System.Drawing.Size(100, 100);

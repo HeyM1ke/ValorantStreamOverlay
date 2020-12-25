@@ -26,6 +26,7 @@ namespace ValorantStreamOverlay
 
         private async Task<int> UPDATECompRankAsync()
         {
+            
             IRestClient compRank = new RestClient(new Uri($"https://pd.{LogicHandler.region}.a.pvp.net/mmr/v1/players/{LogicHandler.UserID}/competitiveupdates?startIndex=0&endIndex=20"));
             IRestRequest compRequest = new RestRequest(Method.GET);
             compRequest.AddHeader("Authorization", $"Bearer {LogicHandler.AccessToken}");
