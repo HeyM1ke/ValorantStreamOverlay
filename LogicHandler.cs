@@ -200,7 +200,7 @@ namespace ValorantStreamOverlay
                     // player promoted
                     int before = game["TierProgressBeforeUpdate"];
                     int after = game["TierProgressAfterUpdate"];
-                    int differ = (after - before) + 100;
+                    int differ = (after - before) + 100; // positive num
                     points[i++] = differ;
                     count++;
                 }
@@ -209,7 +209,7 @@ namespace ValorantStreamOverlay
                     // player demoted
                     int before = game["TierProgressBeforeUpdate"];
                     int after = game["TierProgressAfterUpdate"];
-                    int differ = (after - before) - 100;
+                    int differ = (after - before) - 100; // negative num
                     points[i++] = differ;
                     count++;
                 }
@@ -217,7 +217,7 @@ namespace ValorantStreamOverlay
                 {
                     int before = game["TierProgressBeforeUpdate"];
                     int after = game["TierProgressAfterUpdate"];
-                    points[i++] = before - after;
+                    points[i++] = after - before;                   
                     // If a change is detected
                     // if a change is detected, then add number difference between the after - the before to an array
                     // that contains 3 values, 3 values are then sent to SetChangesToOverlay(array here <--- )
@@ -305,9 +305,11 @@ namespace ValorantStreamOverlay
             Label[] rankChanges = { ValorantOver.recentGame1, ValorantOver.recentGame2, ValorantOver.recentGame3 };
             for (int i = 0; i < pointchange.Length; i++)
             {
-                if (pointchange[i] > 0)
+                // neg num represents decrease in pts
+                if (pointchange[i] < 0)
                 {
                     //In the case of a demotion or a loss
+                    pointchange[i] *= -1;
                     string change;
                     if (pointchange[i] <= 9)
                     {
@@ -321,17 +323,17 @@ namespace ValorantStreamOverlay
                     rankChanges[i].ForeColor = Color.Red;
                     rankChanges[i].Text = $"-{change}";
                 }
-                else if (pointchange[i] < 0)
+                else if (pointchange[i] > 0)
                 {
-                    int checker = pointchange[i] * -1;
+                    //int checker = pointchange[i] * -1;
                     string change;
-                    if (checker <= 9)
+                    if (pointchange[i] <= 9)
                     {
-                        change = $"0{checker}";
+                        change = $"0{pointchange[i]}";
                     }
                     else
                     {
-                        change = checker.ToString();
+                        change = pointchange[i].ToString();
                     }
 
                     rankChanges[i].ForeColor = Color.LimeGreen;

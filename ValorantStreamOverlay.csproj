@@ -5,7 +5,7 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
     <ApplicationIcon>icon.ico</ApplicationIcon>
-    <Version>0.9.5.0</Version>
+    <Version>0.9.5.5</Version>
     <Company>RumbleMike</Company>
     <Description>C# Program that offers an overlay for content creators.</Description>
     <Copyright />
