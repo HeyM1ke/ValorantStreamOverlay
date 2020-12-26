@@ -5,6 +5,13 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
     <ApplicationIcon>icon.ico</ApplicationIcon>
+    <Version>0.9.5.0</Version>
+    <Company>RumbleMike</Company>
+    <Description>C# Program that offers an overlay for content creators.</Description>
+    <Copyright />
+    <PackageIcon>icon.png</PackageIcon>
+    <RepositoryUrl>https://github.com/RumbleMike/ValorantStreamOverlay</RepositoryUrl>
+    <PackageReleaseNotes>https://github.com/RumbleMike/ValorantStreamOverlay/releases/latest</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
@@ -42,6 +49,10 @@
     <None Remove="Resources\TX_CompetitiveTier_Large_7.png" />
     <None Remove="Resources\TX_CompetitiveTier_Large_8.png" />
     <None Remove="Resources\TX_CompetitiveTier_Large_9.png" />
+    <None Include="..\..\..\Desktop\Val_Overlay\icon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
