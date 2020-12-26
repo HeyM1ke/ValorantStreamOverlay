@@ -319,7 +319,7 @@ namespace ValorantStreamOverlay
                     }
                     
                     rankChanges[i].ForeColor = Color.Red;
-                    rankChanges[i].Text = change;
+                    rankChanges[i].Text = $"-{change}";
                 }
                 else if (pointchange[i] < 0)
                 {
@@ -335,7 +335,7 @@ namespace ValorantStreamOverlay
                     }
 
                     rankChanges[i].ForeColor = Color.LimeGreen;
-                    rankChanges[i].Text = change;
+                    rankChanges[i].Text = $"+{change}";
                 }
                 else
                 {

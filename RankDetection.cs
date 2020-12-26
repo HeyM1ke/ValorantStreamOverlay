@@ -18,7 +18,7 @@ namespace ValorantStreamOverlay
     {
         List<string> rankNames = new List<string>();
         private dynamic rankJson;
-
+        private int currentRP;
         public RankDetection()
         {
            
@@ -48,6 +48,7 @@ namespace ValorantStreamOverlay
                 {
                     if (game["CompetitiveMovement"] != "MOVEMENT_UNKNOWN")
                     {
+                        currentRP = game["TierProgressAfterUpdate"];
                         return game["TierAfterUpdate"];
                     }
                 }
@@ -81,6 +82,10 @@ namespace ValorantStreamOverlay
             var resource = Properties.Resources.ResourceManager.GetObject("TX_CompetitiveTier_Large_" + rankNumber);
             Bitmap myImage = (Bitmap)resource;
             LogicHandler.ValorantOver.rankIconBox.Image = myImage;
+
+            LogicHandler.ValorantOver.rankPointsElo.Text =
+                $"{currentRP} RP | {(rankNumber * 100) - 300 + currentRP} ELO";
+
 
             /*switch (rankNumber)
             {

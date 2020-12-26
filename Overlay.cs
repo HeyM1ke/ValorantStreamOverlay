@@ -43,6 +43,10 @@ namespace ValorantStreamOverlay
             rankIconBox.Parent = backgroundPic;
             rankIconBox.BackColor = Color.Transparent;
 
+            //Add Rank elo point label, set font and parent.. brb
+            rankPointsElo.BackColor = Color.Transparent;
+            rankPointsElo.Parent = backgroundPic;
+            rankPointsElo.Font = new Font(pfc.Families[0], 18);
 
             ValorantOverStream local = this;
             LogicHandler logic = new LogicHandler(local);
