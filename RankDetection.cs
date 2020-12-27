@@ -60,7 +60,7 @@ namespace ValorantStreamOverlay
 
         private async Task GetCloudRankJSON()
         {
-            IRestClient cloudRankJson = new RestClient(new Uri("https://dl.dropboxusercontent.com/s/fnlw1vxsc05or39/rankInfo.json?dl=0"));
+            IRestClient cloudRankJson = new RestClient(new Uri("https://raw.githubusercontent.com/RumbleMike/ValorantStreamOverlay/main/rankInfo.json"));
             IRestRequest rankRequest = new RestRequest(Method.GET);
             IRestResponse rankResp = cloudRankJson.Get(rankRequest);
             rankJson = (rankResp.IsSuccessful) ? rankJson = rankResp.Content : rankJson = string.Empty;

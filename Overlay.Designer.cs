@@ -133,8 +133,10 @@ namespace ValorantStreamOverlay
             // 
             // backgroundPic
             // 
+            this.backgroundPic.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.backgroundPic.BackColor = System.Drawing.Color.White;
-            this.backgroundPic.Dock = System.Windows.Forms.DockStyle.Fill;
             this.backgroundPic.Image = ((System.Drawing.Image)(resources.GetObject("backgroundPic.Image")));
             this.backgroundPic.Location = new System.Drawing.Point(0, 0);
             this.backgroundPic.Name = "backgroundPic";
