@@ -11,6 +11,8 @@
   <a href="https://twitter.com/Valorleaks"><img src="https://img.shields.io/badge/Twitter-@ValorLeaks-1da1f2.svg?logo=twitter?style=for-the-badge&logo=appveyor"></a>
   
 </p>
+# Current Bugs
+**Does not work on any resolutions different than 1080p, this issue is a major issue and is currently being investigated**
 
 ## About
 Hey everyone, this program was made after I was bothered every other second on what my rank was. I could have implemented a `!rank` command, but I thought of doing something unique. A program that checks your account every few seconds and sees your current rank and your point movement (unofficially). All of the code is open source, so anyone can check if the program is safe or not as you need to type in your Username and Password in the configuation file. As of writing this, there are no alternatives. I will say it now, I will not verify if alternatives are safe. I know my program is safe, and anyone can check if that statment is vaild.
@@ -25,7 +27,7 @@ Some External Packages were used to create this project with ease and implement 
 Welcome to the Tutorial, there will be a video soon but for now there are instructions layed out in text below.
 
 # Installation
-Step 1: Download Latest Version [here](https://github.com/RumbleMike/ValorantStreamOverlay/releases/download/0.9/ValorSteamOverlay.zip)
+Step 1: Download Latest Version [here](https://github.com/RumbleMike/ValorantStreamOverlay/releases/tag/0.9.6)
 
 Step 2: Extract Zip file to your perfered location (If you dont know how to do this... well.. google it)
 
