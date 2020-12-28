@@ -55,7 +55,8 @@ For example if your config file looks like this:
 "username" : "ValorantAdmin",
 "password" : "Hunter2",
 "region" : "na",
-"refreshtime" : 10
+"refreshtime" : 10,
+"language" : "en"
 }
 ```
 This means that my region is North America & the overlay will update every 10 seconds.
