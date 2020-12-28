@@ -12,6 +12,8 @@
   
 </p>
 
+## Program is not affliated with Riot Games, this was made by Rumblemike by himself. If you are Riot please scroll all the way down for your message <3
+
 ## About
 Hey everyone, this program was made after I was bothered every other second on what my rank was. I could have implemented a `!rank` command, but I thought of doing something unique. A program that checks your account every few seconds and sees your current rank and your point movement (unofficially). All of the code is open source, so anyone can check if the program is safe or not as you need to type in your Username and Password in the configuation file. As of writing this, there are no alternatives. I will say it now, I will not verify if alternatives are safe. I know my program is safe, and anyone can check if that statment is vaild.
 
