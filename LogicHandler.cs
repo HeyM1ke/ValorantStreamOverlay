@@ -22,6 +22,7 @@ namespace ValorantStreamOverlay
         public string password { get; set; }
         public string region { get; set; }
         public int refreshtime { get; set; }
+        public string language { get; set; }
     }
 
 
@@ -38,6 +39,7 @@ namespace ValorantStreamOverlay
         public static string password;
         public static string region;
         public static int refreshTimeinSeconds;
+        public static string language;
         public Timer relogTimer;
         public Timer pointTimer;
 
@@ -65,11 +67,23 @@ namespace ValorantStreamOverlay
             Trace.Write("Attempting to Login");
             login();
 
-            UpdateLatest();
-            new RankDetection();
 
-            StartPointRefresh();
-            StartRELOGTimer();
+            if (language == "es")
+            {
+                UpdateLatest();
+                new RankDetecionES();
+                StartPointRefresh();
+                StartRELOGTimer();
+            }
+
+            if (language == "en")
+            {
+                UpdateLatest();
+                new RankDetection();
+                StartPointRefresh();
+                StartRELOGTimer();
+            }
+
         }
 
         static void ReadConfig()
@@ -106,9 +120,16 @@ namespace ValorantStreamOverlay
                 password = localObj["password"].Value<string>();
                 region = localObj["region"].Value<string>();
                 refreshTimeinSeconds = localObj["refreshtime"].Value<int>();
+                language = localObj["language"].Value<string>();
                 if (refreshTimeinSeconds <= 9)
                 {
                     MessageBox.Show("Refresh Time is too low, please set refresh time to more than 10");
+                    Environment.Exit(1);
+                }
+
+                if (language != "es" && language != "en")
+                {
+                    MessageBox.Show("The language what you put isn't valid!");
                     Environment.Exit(1);
                 }
 
@@ -358,8 +379,17 @@ namespace ValorantStreamOverlay
 
         private void pointTimer_Tick(object sender, EventArgs e)
         {
-            UpdateLatest();
-            new RankDetection();
+            if(language== "es")
+            {
+                UpdateLatest();
+                new RankDetecionES();
+            }
+
+            if (language== "en")
+            {
+                UpdateLatest();
+                new RankDetection();
+            }
         }
 
         private void StartRELOGTimer()

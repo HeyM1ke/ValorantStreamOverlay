@@ -55,5 +55,10 @@ namespace ValorantStreamOverlay
 
 
         }
+
+        private void rankingLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

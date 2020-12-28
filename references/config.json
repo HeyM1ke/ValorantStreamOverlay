@@ -1,0 +1,7 @@
+{
+"username" : "USERNAMEHERE",
+"password" : "PASSWORDHERE",
+"region" : "YOURGAMEREGION (eu, na...)",
+"refreshtime": 10,
+"language":  "LANGUAGE HERE (es, en)"
+}
