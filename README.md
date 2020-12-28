@@ -3,7 +3,7 @@
   <br>
 </h1>
 
-<h4 align="center">A Valorant Program that runs on your computer and acts like an overlay for OBS</h4>
+<h4 align="center">A Valorant Program that runs on your computer AND acts like an overlay for OBS</h4>
 
 <p align="center">
   </a>
