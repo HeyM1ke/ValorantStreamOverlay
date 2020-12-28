@@ -57,9 +57,23 @@ namespace ValorantStreamOverlay
             }
             else
             {
-                MessageBox.Show(
-                    "Config File not found within references folder. Please add a Valid Config file to refernce folder.");
-                Environment.Exit(1);
+                if (!File.Exists(Path.Combine(Directory.GetCurrentDirectory(), "references", "config.json")))
+                {
+                    Trace.Write("Creating a JSON file... (Click Accept to continue)");
+                    JConfig configuration = new JConfig()
+                    {
+                        username = "USERNAMEHERE",
+                        password = "PASSWORDHERE",
+                        region = "na",
+                        refreshtime = 10,
+                        language = "en"
+
+                    };
+                    File.WriteAllText((Path.Combine(Directory.GetCurrentDirectory(), "references", "config.json")), JsonConvert.SerializeObject(configuration));
+                    MessageBox.Show(
+                        "Config File was not detected, a config file was created and is in your refrences folder. Please fill out the config file.");
+                    Environment.Exit(1);
+                }
             }
 
             Trace.Write("Reading Config");
@@ -89,27 +103,7 @@ namespace ValorantStreamOverlay
         static void ReadConfig()
         {
             try
-            {
-                //Experiment: Create JSON With code if no file is detected:
-
-                /*if (!File.Exists(Path.Combine(Directory.GetCurrentDirectory(), "references", "config.json")))
-                {
-                    Trace.Write("Creating Json File.");
-                    JConfig configuration = new JConfig()
-                    {
-                        username = "USERNAMEHERE",
-                        password = "PASSWORDHERE",
-                        region = "na",
-                        refreshtime = 10
-
-                    };
-                    File.WriteAllText((Path.Combine(Directory.GetCurrentDirectory(), "references", "config.json")), JsonConvert.SerializeObject(configuration));
-                    MessageBox.Show(
-                        "Config File was not detected, a config file was created and is in your refrences folder. Please fill out the config file.");
-                    Environment.Exit(1);
-                }*/
-                
-                
+            {                
                 StreamReader r =
                     new StreamReader(Path.Combine(Directory.GetCurrentDirectory(), "references", "config.json"));
                 string json = r.ReadToEnd();
