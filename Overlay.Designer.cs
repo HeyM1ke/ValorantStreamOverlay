@@ -1,5 +1,4 @@
-﻿
-namespace ValorantStreamOverlay
+﻿namespace ValorantStreamOverlay
 {
     partial class ValorantOverStream
     {
@@ -54,9 +53,8 @@ namespace ValorantStreamOverlay
             this.panel1.Controls.Add(this.backgroundPic);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(569, 238);
+            this.panel1.Size = new System.Drawing.Size(398, 143);
             this.panel1.TabIndex = 0;
             // 
             // recentGame3
@@ -65,10 +63,9 @@ namespace ValorantStreamOverlay
             this.recentGame3.BackColor = System.Drawing.Color.Black;
             this.recentGame3.Font = new System.Drawing.Font("Anton", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.recentGame3.ForeColor = System.Drawing.Color.White;
-            this.recentGame3.Location = new System.Drawing.Point(494, 143);
-            this.recentGame3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.recentGame3.Location = new System.Drawing.Point(346, 86);
             this.recentGame3.Name = "recentGame3";
-            this.recentGame3.Size = new System.Drawing.Size(72, 54);
+            this.recentGame3.Size = new System.Drawing.Size(48, 36);
             this.recentGame3.TabIndex = 6;
             this.recentGame3.Text = "+00";
             // 
@@ -78,10 +75,9 @@ namespace ValorantStreamOverlay
             this.recentGame2.BackColor = System.Drawing.Color.Black;
             this.recentGame2.Font = new System.Drawing.Font("Anton", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.recentGame2.ForeColor = System.Drawing.Color.White;
-            this.recentGame2.Location = new System.Drawing.Point(407, 143);
-            this.recentGame2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.recentGame2.Location = new System.Drawing.Point(285, 86);
             this.recentGame2.Name = "recentGame2";
-            this.recentGame2.Size = new System.Drawing.Size(72, 54);
+            this.recentGame2.Size = new System.Drawing.Size(48, 36);
             this.recentGame2.TabIndex = 5;
             this.recentGame2.Text = "+00";
             // 
@@ -91,10 +87,9 @@ namespace ValorantStreamOverlay
             this.recentGame1.BackColor = System.Drawing.Color.Black;
             this.recentGame1.Font = new System.Drawing.Font("Anton", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.recentGame1.ForeColor = System.Drawing.Color.White;
-            this.recentGame1.Location = new System.Drawing.Point(321, 143);
-            this.recentGame1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.recentGame1.Location = new System.Drawing.Point(225, 86);
             this.recentGame1.Name = "recentGame1";
-            this.recentGame1.Size = new System.Drawing.Size(72, 54);
+            this.recentGame1.Size = new System.Drawing.Size(48, 36);
             this.recentGame1.TabIndex = 4;
             this.recentGame1.Text = "+00";
             // 
@@ -102,10 +97,9 @@ namespace ValorantStreamOverlay
             // 
             this.rankIconBox.BackColor = System.Drawing.Color.Transparent;
             this.rankIconBox.Image = ((System.Drawing.Image)(resources.GetObject("rankIconBox.Image")));
-            this.rankIconBox.Location = new System.Drawing.Point(17, 112);
-            this.rankIconBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.rankIconBox.Location = new System.Drawing.Point(12, 67);
             this.rankIconBox.Name = "rankIconBox";
-            this.rankIconBox.Size = new System.Drawing.Size(93, 108);
+            this.rankIconBox.Size = new System.Drawing.Size(65, 65);
             this.rankIconBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.rankIconBox.TabIndex = 3;
             this.rankIconBox.TabStop = false;
@@ -115,10 +109,9 @@ namespace ValorantStreamOverlay
             this.rankPointsElo.AutoSize = true;
             this.rankPointsElo.Font = new System.Drawing.Font("Anton", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.rankPointsElo.ForeColor = System.Drawing.Color.White;
-            this.rankPointsElo.Location = new System.Drawing.Point(327, 17);
-            this.rankPointsElo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.rankPointsElo.Location = new System.Drawing.Point(229, 10);
             this.rankPointsElo.Name = "rankPointsElo";
-            this.rankPointsElo.Size = new System.Drawing.Size(251, 54);
+            this.rankPointsElo.Size = new System.Drawing.Size(170, 36);
             this.rankPointsElo.TabIndex = 2;
             this.rankPointsElo.Text = "99 RP | 2899 ELO";
             this.rankPointsElo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -131,39 +124,35 @@ namespace ValorantStreamOverlay
             this.rankingLabel.Font = new System.Drawing.Font("Anton", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.rankingLabel.ForeColor = System.Drawing.Color.White;
             this.rankingLabel.Location = new System.Drawing.Point(0, 0);
-            this.rankingLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.rankingLabel.Name = "rankingLabel";
-            this.rankingLabel.Size = new System.Drawing.Size(298, 84);
+            this.rankingLabel.Size = new System.Drawing.Size(199, 56);
             this.rankingLabel.TabIndex = 1;
             this.rankingLabel.Text = "IMMORTAL 3";
             this.rankingLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rankingLabel.Click += new System.EventHandler(this.rankingLabel_Click);
             // 
             // backgroundPic
             // 
-            this.backgroundPic.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.backgroundPic.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.backgroundPic.BackColor = System.Drawing.Color.White;
             this.backgroundPic.Image = ((System.Drawing.Image)(resources.GetObject("backgroundPic.Image")));
             this.backgroundPic.Location = new System.Drawing.Point(0, 0);
-            this.backgroundPic.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.backgroundPic.Name = "backgroundPic";
-            this.backgroundPic.Size = new System.Drawing.Size(569, 238);
+            this.backgroundPic.Size = new System.Drawing.Size(398, 143);
             this.backgroundPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.backgroundPic.TabIndex = 0;
             this.backgroundPic.TabStop = false;
             // 
             // ValorantOverStream
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(569, 238);
+            this.ClientSize = new System.Drawing.Size(398, 143);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "ValorantOverStream";
             this.Text = "Valorant Overlay";
             this.Load += new System.EventHandler(this.ValorantOverStream_Load);
@@ -187,4 +176,3 @@ namespace ValorantStreamOverlay
         public System.Windows.Forms.Label recentGame2;
     }
 }
-
