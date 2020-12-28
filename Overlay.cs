@@ -25,6 +25,7 @@ namespace ValorantStreamOverlay
 
         private void ValorantOverStream_Load(object sender, EventArgs e)
         {
+            //Application.SetHighDpiMode(HighDpiMode.SystemAware);
             rankingLabel.Parent = backgroundPic;
             rankingLabel.BackColor = Color.Transparent;
             PrivateFontCollection pfc = new PrivateFontCollection();

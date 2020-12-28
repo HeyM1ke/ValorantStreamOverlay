@@ -141,6 +141,7 @@ namespace ValorantStreamOverlay
             this.backgroundPic.Location = new System.Drawing.Point(0, 0);
             this.backgroundPic.Name = "backgroundPic";
             this.backgroundPic.Size = new System.Drawing.Size(398, 143);
+            this.backgroundPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.backgroundPic.TabIndex = 0;
             this.backgroundPic.TabStop = false;
             // 
@@ -151,6 +152,7 @@ namespace ValorantStreamOverlay
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(398, 143);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ValorantOverStream";
             this.Text = "Valorant Overlay";
