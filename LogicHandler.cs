@@ -80,22 +80,20 @@ namespace ValorantStreamOverlay
             ReadConfig();
             Trace.Write("Attempting to Login");
             login();
-
+            UpdateLatest();
+            StartPointRefresh();
+            StartRELOGTimer();
 
             if (language == "es")
             {
-                UpdateLatest();
                 new RankDetecionES();
-                StartPointRefresh();
-                StartRELOGTimer();
+
             }
 
             if (language == "en")
             {
-                UpdateLatest();
                 new RankDetection();
-                StartPointRefresh();
-                StartRELOGTimer();
+
             }
 
         }
