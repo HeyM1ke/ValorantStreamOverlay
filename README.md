@@ -59,7 +59,7 @@ For example if your config file looks like this:
 "language" : "en"
 }
 ```
-This means that my region is North America & the overlay will update every 10 seconds.
+This means that my region is North America, my language is the English & the overlay will update every 10 seconds.
 
 **DO NOT PUT 1 SECOND, THE API WILL NOT LIKE THAT. THE MINIMUM AMMOUNT OF TIME IS 10 SECONDS**
 
