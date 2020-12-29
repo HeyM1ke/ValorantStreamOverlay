@@ -98,7 +98,7 @@ namespace ValorantStreamOverlay
 
             if (language == "fr")
             {
-                new RankDetectionFR();
+                new RankDetecionFR();
             }
 
         }
@@ -124,7 +124,7 @@ namespace ValorantStreamOverlay
                     Environment.Exit(1);
                 }
 
-                if (language != "es" && language != "en")
+                if (language != "es" && language != "en" && language != "fr")
                 {
                     MessageBox.Show("The language what you put isn't valid!");
                     Environment.Exit(1);
