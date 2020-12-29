@@ -25,6 +25,7 @@ namespace ValorantStreamOverlay
         public string background_bot { get; set; }
         public string background_games { get; set; }
         public string games_positive { get; set; }
+        public string games_negative { get; set; }
         public int refreshtime { get; set; }
     }
 
