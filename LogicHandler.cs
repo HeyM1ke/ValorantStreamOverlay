@@ -21,9 +21,21 @@ namespace ValorantStreamOverlay
         public string username { get; set; }
         public string password { get; set; }
         public string region { get; set; }
+        public string background_top { get; set; }
+        public string background_bot { get; set; }
+        public string background_games { get; set; }
+        public string games_positive { get; set; }
         public int refreshtime { get; set; }
     }
 
+     enum ChangeableColors
+    {
+        BackgroundTop,
+        BackgroundBot,
+        BackgroundGames,
+        GamesPositive,
+        GamesNegative
+    }
 
     class LogicHandler
     {
@@ -37,6 +49,15 @@ namespace ValorantStreamOverlay
         public static string username;
         public static string password;
         public static string region;
+
+        public static Dictionary<ChangeableColors, Color> availableColors;
+
+        public static string background_top;
+        public static string background_bot;
+        public static string background_games;
+        public static string games_positive;
+        public static string games_negative;
+
         public static int refreshTimeinSeconds;
         public Timer relogTimer;
         public Timer pointTimer;
@@ -47,6 +68,8 @@ namespace ValorantStreamOverlay
         {
             logic = this;
             ValorantOver = instance;
+
+            availableColors = new Dictionary<ChangeableColors, Color>();
 
             Trace.Write(referencesLoc);
             if (File.Exists(referencesLoc))
@@ -64,6 +87,8 @@ namespace ValorantStreamOverlay
             ReadConfig();
             Trace.Write("Attempting to Login");
             login();
+
+            FillAvailableColorContainer();
 
             UpdateLatest();
             new RankDetection();
@@ -105,18 +130,39 @@ namespace ValorantStreamOverlay
                 username = localObj["username"].Value<string>();
                 password = localObj["password"].Value<string>();
                 region = localObj["region"].Value<string>();
+                background_top = localObj["background_top"].Value<string>();
+                background_bot = localObj["background_bot"].Value<string>();
+                background_games = localObj["background_games"].Value<string>();
+                games_positive = localObj["games_positive"].Value<string>();
+                games_negative = localObj["games_negative"].Value<string>();
                 refreshTimeinSeconds = localObj["refreshtime"].Value<int>();
                 if (refreshTimeinSeconds <= 9)
                 {
                     MessageBox.Show("Refresh Time is too low, please set refresh time to more than 10");
                     Environment.Exit(1);
                 }
-
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
                 throw;
+            }
+        }
+
+        private void FillAvailableColorContainer()
+        {
+            try
+            {
+                availableColors.Add(ChangeableColors.BackgroundTop, ColorTranslator.FromHtml(background_top));
+                availableColors.Add(ChangeableColors.BackgroundBot, ColorTranslator.FromHtml(background_bot));
+                availableColors.Add(ChangeableColors.BackgroundGames, ColorTranslator.FromHtml(background_games));
+                availableColors.Add(ChangeableColors.GamesPositive, ColorTranslator.FromHtml(games_positive));
+                availableColors.Add(ChangeableColors.GamesNegative, ColorTranslator.FromHtml(games_negative));
+            }
+            catch
+            {
+                //HTML color wrong
+                MessageBox.Show("At least one of your colors has a typo.");
             }
         }
 
@@ -300,11 +346,25 @@ namespace ValorantStreamOverlay
             SetChangesToOverlay(points);
         }*/
 
+
+
+        private Color GetColor(ChangeableColors color)
+        {
+            return availableColors.GetValueOrDefault(color);
+        }
+
         private void SetChangesToOverlay(int[] pointchange)
         {
+
             Label[] rankChanges = { ValorantOver.recentGame1, ValorantOver.recentGame2, ValorantOver.recentGame3 };
+
+            ((Panel)ValorantOver.backgroundBot).BackColor = GetColor(ChangeableColors.BackgroundBot);
+            ((Panel)ValorantOver.backgroundTop).BackColor = GetColor(ChangeableColors.BackgroundTop);
+
+
             for (int i = 0; i < pointchange.Length; i++)
             {
+                rankChanges[i].BackColor = GetColor(ChangeableColors.BackgroundGames);
                 // neg num represents decrease in pts
                 if (pointchange[i] < 0)
                 {
@@ -320,7 +380,7 @@ namespace ValorantStreamOverlay
                         change = pointchange[i].ToString();
                     }
                     
-                    rankChanges[i].ForeColor = Color.Red;
+                    rankChanges[i].ForeColor = GetColor(ChangeableColors.GamesNegative);
                     rankChanges[i].Text = $"-{change}";
                 }
                 else if (pointchange[i] > 0)
@@ -336,7 +396,7 @@ namespace ValorantStreamOverlay
                         change = pointchange[i].ToString();
                     }
 
-                    rankChanges[i].ForeColor = Color.LimeGreen;
+                    rankChanges[i].ForeColor = GetColor(ChangeableColors.GamesPositive);
                     rankChanges[i].Text = $"+{change}";
                 }
                 else
