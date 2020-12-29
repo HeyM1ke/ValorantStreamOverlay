@@ -96,6 +96,11 @@ namespace ValorantStreamOverlay
 
             }
 
+            if (language == "fr")
+            {
+                new RankDetectionFR();
+            }
+
         }
 
         static void ReadConfig()

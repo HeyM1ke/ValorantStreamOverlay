@@ -47,11 +47,12 @@ These prefixes will be set in the part of the config file below.
 "region": "PREFIXHERE"
 }
 ```
-Step 6: Set your overlay language. (By the moment, there are only the Spanish and the English)
+Step 6: Set your overlay language.
 | Language | Prefix |
 | - | - |
 | English | `en` |
 | Spanish | `es` |
+| Français | `fr` |
 
 These prefixes will be set in the part of the config file below.
 ```
