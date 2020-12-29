@@ -47,8 +47,20 @@ These prefixes will be set in the part of the config file below.
 "region": "PREFIXHERE"
 }
 ```
+Step 6: Set your overlay language. (By the moment, there are only the Spanish and the English)
+| Language | Prefix |
+| - | - |
+| English | `en` |
+| Spanish | `es` |
 
-Step 6: Set your delay. This is how often your rank and ranked points update. Recommendation is 10-20 seconds.
+These prefixes will be set in the part of the config file below.
+```
+{
+"language": "PREFIXHERE"
+}
+```
+
+Step 7: Set your delay. This is how often your rank and ranked points update. Recommendation is 10-20 seconds.
 For example if your config file looks like this:
 ```
 {
@@ -63,11 +75,11 @@ This means that my region is North America, my language is the English & the ove
 
 **DO NOT PUT 1 SECOND, THE API WILL NOT LIKE THAT. THE MINIMUM AMMOUNT OF TIME IS 10 SECONDS**
 
-Step 7: Run the Application, you will get an pop up, from Windows Smart Screen. This is normal as this program is not [signed](https://en.wikipedia.org/wiki/Code_signing) `tdlr too complicated and I think it costs money` From here you have a possiblity of getting a popup from microsoft asking you to install something (Install x86 Runtime as it is required). Install it. It is called the .NET Core Runtime, it is the framework that allows the program to run.
+Step 8: Run the Application, you will get an pop up, from Windows Smart Screen. This is normal as this program is not [signed](https://en.wikipedia.org/wiki/Code_signing) `tdlr too complicated and I think it costs money` From here you have a possiblity of getting a popup from microsoft asking you to install something (Install x86 Runtime as it is required). Install it. It is called the .NET Core Runtime, it is the framework that allows the program to run.
 
-Step 8: When the program successfully launches, you will see your Rank and your point gains/losses for your last 3 matches. Red Numbers indicate a Loss while Green numbers indicate a win.
+Step 9: When the program successfully launches, you will see your Rank and your point gains/losses for your last 3 matches. Red Numbers indicate a Loss while Green numbers indicate a win.
 
-Step 9: Create a window capture in OBS and you are done.
+Step 10: Create a window capture in OBS and you are done.
 
 This is the entire process to get the overlay working perfectly and how it was designed.
 
