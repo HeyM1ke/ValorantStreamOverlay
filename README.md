@@ -21,56 +21,14 @@ Hey everyone, this program was made after I was bothered every other second on w
 Some External Packages were used to create this project with ease and implement cool features:
   - [RestSharp](https://www.nuget.org/packages/RestSharp/)
   - [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/)
-  - Adding Soon: [AutoUpdater](https://github.com/ravibpatel/AutoUpdater.NET)
+  - [AutoUpdater](https://github.com/ravibpatel/AutoUpdater.NET)
 
 ## How to use program
-Welcome to the Tutorial, there will be a video soon but for now there are instructions layed out in text below.
+Welcome to the Tutorial watch video below!
 
 # Installation
-Step 1: Download Latest Version [here](https://github.com/RumbleMike/ValorantStreamOverlay/releases/tag/0.9.9)
-
-Step 2: Extract Zip file to your perfered location (If you dont know how to do this... well.. google it)
-
-Step 3: Open your extracted folder and make your way over to the `refrences` folder, here you will find a TTF File (Font File) and a Config.Json. Open Config.Json with your preferred text editor.
-
-Step 4: Enter your Riot Games Username (the one you use to login, not in-game name) and your Riot Games Password.
-
-Step 5: Set your region, please refer to the table below for your region. If your country/region is not on this list, please try every location shown in the table.
-| Region Name | Region Prefix |
-| - | - |
-| North America, Latam, Brazil | `na` |
-| Europe | `eu` |
-| Asia Pacific, Japan, OCE, Africa, Australia  | `ap` |
-| Korea | `ko` |
-
-These prefixes will be set in the part of the config file below.
-```
-{
-"region": "PREFIXHERE"
-}
-```
-
-Step 6: Set your delay. This is how often your rank and ranked points update. Recommendation is 10-20 seconds.
-For example if your config file looks like this:
-```
-{
-"username" : "ValorantAdmin",
-"password" : "Hunter2",
-"region" : "na",
-"refreshtime" : 10
-}
-```
-This means that my region is North America & the overlay will update every 10 seconds.
-
-**DO NOT PUT 1 SECOND, THE API WILL NOT LIKE THAT. THE MINIMUM AMMOUNT OF TIME IS 10 SECONDS**
-
-Step 7: Run the Application, you will get an pop up, from Windows Smart Screen. This is normal as this program is not [signed](https://en.wikipedia.org/wiki/Code_signing) `tdlr too complicated and I think it costs money` From here you have a possiblity of getting a popup from microsoft asking you to install something (Install x86 Runtime as it is required). Install it. It is called the .NET Core Runtime, it is the framework that allows the program to run.
-
-Step 8: When the program successfully launches, you will see your Rank and your point gains/losses for your last 3 matches. Red Numbers indicate a Loss while Green numbers indicate a win.
-
-Step 9: Create a window capture in OBS and you are done.
-
-This is the entire process to get the overlay working perfectly and how it was designed.
+Watch Video https://youtu.be/cP3Ly3-4kSI
+[![Watch the video](https://i.imgur.com/ZPAafXu.png)](https://youtu.be/cP3Ly3-4kSI)
 
 # Message For Riot
 Hey Riot, so I know that you are probably reading this since you guys love me so much on twitter on @Valorleaks (love you back). Regardless, if this program is not something you want out there, please message me through twitter (@RumbleMikee). Otherwise, this program is not injecting or modifying the game in any sort of way. It is simply just making a webrequest to your API which then returns a json that I parse and display. Thanks <3
