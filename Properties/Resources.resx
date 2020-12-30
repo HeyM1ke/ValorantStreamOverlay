@@ -127,6 +127,24 @@
   <data name="backgroundv2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\backgroundv2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="bluebackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bluebackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="custom" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\custom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="graybackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\graybackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="greenbackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\greenbackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lightbluebackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lightbluebackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="purplebackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\purplebackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="TX_CompetitiveTierMovement_Demoted" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TX_CompetitiveTierMovement_Demoted.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

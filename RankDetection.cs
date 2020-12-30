@@ -6,8 +6,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
-
-
+using System.Windows.Forms;
 using RestSharp;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -16,51 +15,65 @@ namespace ValorantStreamOverlay
 {
     class RankDetection
     {
-        List<string> rankNames = new List<string>();
         private dynamic rankJson;
         private int currentRP;
         public RankDetection()
         {
-           
             //Start Update
-            int rankNum = UPDATECompRankAsync().GetAwaiter().GetResult();
             GetCloudRankJSON().GetAwaiter().GetResult();
+            int rankNum = UPDATECompRankAsync().GetAwaiter().GetResult();
+            RankParser(rankNum);
+        }
+
+        public void UpdateRank()
+        {
+            int rankNum = UPDATECompRankAsync().GetAwaiter().GetResult();
             RankParser(rankNum);
         }
 
         private async Task<int> UPDATECompRankAsync()
         {
-            
-            IRestClient compRank = new RestClient(new Uri($"https://pd.{LogicHandler.region}.a.pvp.net/mmr/v1/players/{LogicHandler.UserID}/competitiveupdates?startIndex=0&endIndex=20"));
-            IRestRequest compRequest = new RestRequest(Method.GET);
-            compRequest.AddHeader("Authorization", $"Bearer {LogicHandler.AccessToken}");
-            compRequest.AddHeader("X-Riot-Entitlements-JWT", LogicHandler.EntitlementToken);
-
-            IRestResponse rankedResp = compRank.Get(compRequest);
-
-            if (rankedResp.IsSuccessful)
+            try
             {
-                dynamic jsonconvert = JsonConvert.DeserializeObject<JObject>(rankedResp.Content);
+                IRestClient compRank = new RestClient(new Uri(
+                    $"https://pd.{LogicHandler.region}.a.pvp.net/mmr/v1/players/{LogicHandler.UserID}/competitiveupdates?startIndex=0&endIndex=20"));
+                IRestRequest compRequest = new RestRequest(Method.GET);
+                compRequest.AddHeader("Authorization", $"Bearer {LogicHandler.AccessToken}");
+                compRequest.AddHeader("X-Riot-Entitlements-JWT", LogicHandler.EntitlementToken);
 
-                dynamic matches = jsonconvert["Matches"];
+                IRestResponse rankedResp = compRank.Get(compRequest);
 
-                foreach (var game in matches)
+                if (rankedResp.IsSuccessful)
                 {
-                    if (game["CompetitiveMovement"] != "MOVEMENT_UNKNOWN")
+                    dynamic jsonconvert = JsonConvert.DeserializeObject<JObject>(rankedResp.Content);
+
+                    dynamic matches = jsonconvert["Matches"];
+
+                    foreach (var game in matches)
                     {
-                        currentRP = game["TierProgressAfterUpdate"];
-                        return game["TierAfterUpdate"];
+                        if (game["CompetitiveMovement"] != "MOVEMENT_UNKNOWN")
+                        {
+                            currentRP = game["TierProgressAfterUpdate"];
+                            return game["TierAfterUpdate"];
+                        }
                     }
+
+                    return 0;
                 }
+
+                return 0;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error Retrieving UPDATECompRankAsync function");
                 return 0;
             }
 
-            return 0;
         }
 
         private async Task GetCloudRankJSON()
         {
-            IRestClient cloudRankJson = new RestClient(new Uri("https://502.wtf/rankInfo.json"));
+            IRestClient cloudRankJson = new RestClient(new Uri("https://502.wtf/ValorrankInfo.json"));
             IRestRequest rankRequest = new RestRequest(Method.GET);
             IRestResponse rankResp = cloudRankJson.Get(rankRequest);
             rankJson = (rankResp.IsSuccessful) ? rankJson = rankResp.Content : rankJson = string.Empty;

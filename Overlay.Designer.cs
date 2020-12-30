@@ -29,6 +29,7 @@ namespace ValorantStreamOverlay
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ValorantOverStream));
             this.panel1 = new System.Windows.Forms.Panel();
             this.recentGame3 = new System.Windows.Forms.Label();
@@ -38,9 +39,12 @@ namespace ValorantStreamOverlay
             this.rankPointsElo = new System.Windows.Forms.Label();
             this.rankingLabel = new System.Windows.Forms.Label();
             this.backgroundPic = new System.Windows.Forms.PictureBox();
+            this.contextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.settingsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rankIconBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.backgroundPic)).BeginInit();
+            this.contextMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -110,11 +114,11 @@ namespace ValorantStreamOverlay
             this.rankPointsElo.AutoSize = true;
             this.rankPointsElo.Font = new System.Drawing.Font("Anton", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.rankPointsElo.ForeColor = System.Drawing.Color.White;
-            this.rankPointsElo.Location = new System.Drawing.Point(229, 10);
+            this.rankPointsElo.Location = new System.Drawing.Point(216, 9);
             this.rankPointsElo.Name = "rankPointsElo";
-            this.rankPointsElo.Size = new System.Drawing.Size(170, 36);
+            this.rankPointsElo.Size = new System.Drawing.Size(182, 36);
             this.rankPointsElo.TabIndex = 2;
-            this.rankPointsElo.Text = "99 RP | 2899 ELO";
+            this.rankPointsElo.Text = "000 RP | 0000 ELO";
             this.rankPointsElo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // rankingLabel
@@ -126,9 +130,9 @@ namespace ValorantStreamOverlay
             this.rankingLabel.ForeColor = System.Drawing.Color.White;
             this.rankingLabel.Location = new System.Drawing.Point(0, 0);
             this.rankingLabel.Name = "rankingLabel";
-            this.rankingLabel.Size = new System.Drawing.Size(199, 56);
+            this.rankingLabel.Size = new System.Drawing.Size(125, 56);
             this.rankingLabel.TabIndex = 1;
-            this.rankingLabel.Text = "IMMORTAL 3";
+            this.rankingLabel.Text = "INVALID";
             this.rankingLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // backgroundPic
@@ -144,6 +148,21 @@ namespace ValorantStreamOverlay
             this.backgroundPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.backgroundPic.TabIndex = 0;
             this.backgroundPic.TabStop = false;
+            // 
+            // contextMenu
+            // 
+            this.contextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.settingsMenuItem});
+            this.contextMenu.Name = "contextMenuStrip1";
+            this.contextMenu.Size = new System.Drawing.Size(117, 26);
+            // 
+            // settingsMenuItem
+            // 
+            this.settingsMenuItem.CheckOnClick = true;
+            this.settingsMenuItem.Name = "settingsMenuItem";
+            this.settingsMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.settingsMenuItem.Text = "Settings";
+            this.settingsMenuItem.Click += new System.EventHandler(this.settingsMenuItem_Click);
             // 
             // ValorantOverStream
             // 
@@ -161,6 +180,7 @@ namespace ValorantStreamOverlay
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rankIconBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.backgroundPic)).EndInit();
+            this.contextMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -168,13 +188,15 @@ namespace ValorantStreamOverlay
         #endregion
         public System.Windows.Forms.Label rankLabel;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox backgroundPic;
         public System.Windows.Forms.Label rankingLabel;
         public System.Windows.Forms.PictureBox rankIconBox;
         public System.Windows.Forms.Label rankPointsElo;
         public System.Windows.Forms.Label recentGame1;
         public System.Windows.Forms.Label recentGame3;
         public System.Windows.Forms.Label recentGame2;
+        private System.Windows.Forms.ContextMenuStrip contextMenu;
+        public System.Windows.Forms.ToolStripMenuItem settingsMenuItem;
+        public System.Windows.Forms.PictureBox backgroundPic;
     }
 }
 

@@ -21,9 +21,5 @@ namespace ValorantStreamOverlay
             
         }
 
-        static void InitalLoad()
-        {
-            
-        }
     }
 }

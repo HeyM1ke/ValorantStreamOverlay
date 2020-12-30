@@ -25,7 +25,11 @@ namespace ValorantStreamOverlay
 
         private void ValorantOverStream_Load(object sender, EventArgs e)
         {
+            //Check For updates
+            new Updator();
+
             //Application.SetHighDpiMode(HighDpiMode.SystemAware);
+            backgroundPic.ContextMenuStrip = contextMenu;
             rankingLabel.Parent = backgroundPic;
             rankingLabel.BackColor = Color.Transparent;
             PrivateFontCollection pfc = new PrivateFontCollection();
@@ -53,6 +57,18 @@ namespace ValorantStreamOverlay
             LogicHandler logic = new LogicHandler(local);
 
 
+
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void settingsMenuItem_Click(object sender, EventArgs e)
+        {
+            Settings settingsPage = new Settings();
+            settingsPage.ShowDialog();
 
         }
     }
