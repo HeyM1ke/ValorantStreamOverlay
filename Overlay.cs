@@ -14,7 +14,9 @@ namespace ValorantStreamOverlay
 {
     public partial class ValorantOverStream : Form
     {
-      
+        //https://stackoverflow.com/a/24561946/908
+        private bool mouseDown;
+        private Point lastLocation;
 
         public ValorantOverStream()
         {
@@ -53,11 +55,26 @@ namespace ValorantStreamOverlay
             rankPointsElo.Parent = backgroundPic;
             rankPointsElo.Font = new Font(pfc.Families[0], 18);
 
+
+            if (Properties.Settings.Default.hideTitleBar)
+            {
+                this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            }
+            var opacity = Properties.Settings.Default.opacity;
+            this.Opacity = (double)opacity / 100;
+
             ValorantOverStream local = this;
             LogicHandler logic = new LogicHandler(local);
 
 
 
+        }
+        private void ValorantOverStream_Shown(object sender, EventArgs e)
+        {
+            if (Properties.Settings.Default.alwaysOnTop) 
+            {
+                this.TopMost = true; 
+            }
         }
 
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
@@ -70,6 +87,31 @@ namespace ValorantStreamOverlay
             Settings settingsPage = new Settings();
             settingsPage.ShowDialog();
 
+        }
+        private void closeMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private void ValorantOverStream_MouseDown(object sender, MouseEventArgs e)
+        {
+            mouseDown = true;
+            lastLocation = e.Location;
+        }
+
+        private void ValorantOverStream_MouseMove(object sender, MouseEventArgs e)
+        {
+            if(mouseDown)
+            {
+                this.Location = new Point(
+                    (this.Location.X - lastLocation.X) + e.X, (this.Location.Y - lastLocation.Y) + e.Y);
+
+                this.Update();
+            }
+        }
+
+        private void ValorantOverStream_MouseUp(object sender, MouseEventArgs e)
+        {
+            mouseDown = false;
         }
     }
 }
