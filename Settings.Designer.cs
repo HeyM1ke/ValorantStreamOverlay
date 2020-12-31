@@ -40,21 +40,25 @@ namespace ValorantStreamOverlay
             this.skinDrop = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.refreshDrop = new System.Windows.Forms.ComboBox();
+            this.languageDrop = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // usernameTextBox
             // 
-            this.usernameTextBox.Location = new System.Drawing.Point(12, 12);
+            this.usernameTextBox.Location = new System.Drawing.Point(34, 13);
+            this.usernameTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.usernameTextBox.Name = "usernameTextBox";
             this.usernameTextBox.PlaceholderText = "Riot Games Username";
-            this.usernameTextBox.Size = new System.Drawing.Size(199, 23);
+            this.usernameTextBox.Size = new System.Drawing.Size(296, 31);
             this.usernameTextBox.TabIndex = 0;
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(108, 161);
+            this.cancelButton.Location = new System.Drawing.Point(177, 291);
+            this.cancelButton.Margin = new System.Windows.Forms.Padding(4);
             this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(75, 23);
+            this.cancelButton.Size = new System.Drawing.Size(112, 34);
             this.cancelButton.TabIndex = 1;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
@@ -62,9 +66,10 @@ namespace ValorantStreamOverlay
             // applyButton
             // 
             this.applyButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.applyButton.Location = new System.Drawing.Point(27, 161);
+            this.applyButton.Location = new System.Drawing.Point(57, 291);
+            this.applyButton.Margin = new System.Windows.Forms.Padding(4);
             this.applyButton.Name = "applyButton";
-            this.applyButton.Size = new System.Drawing.Size(75, 23);
+            this.applyButton.Size = new System.Drawing.Size(112, 34);
             this.applyButton.TabIndex = 2;
             this.applyButton.Text = "APPLY";
             this.applyButton.UseVisualStyleBackColor = true;
@@ -72,11 +77,12 @@ namespace ValorantStreamOverlay
             // 
             // passwordTextBox
             // 
-            this.passwordTextBox.Location = new System.Drawing.Point(12, 41);
+            this.passwordTextBox.Location = new System.Drawing.Point(34, 57);
+            this.passwordTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.PasswordChar = '*';
             this.passwordTextBox.PlaceholderText = "Riot Games Password";
-            this.passwordTextBox.Size = new System.Drawing.Size(199, 23);
+            this.passwordTextBox.Size = new System.Drawing.Size(296, 31);
             this.passwordTextBox.TabIndex = 3;
             this.passwordTextBox.UseSystemPasswordChar = true;
             // 
@@ -88,18 +94,20 @@ namespace ValorantStreamOverlay
             "Europe",
             "Korea",
             "Asia Pacific"});
-            this.regionDrop.Location = new System.Drawing.Point(77, 70);
+            this.regionDrop.Location = new System.Drawing.Point(132, 100);
+            this.regionDrop.Margin = new System.Windows.Forms.Padding(4);
             this.regionDrop.Name = "regionDrop";
-            this.regionDrop.Size = new System.Drawing.Size(134, 23);
+            this.regionDrop.Size = new System.Drawing.Size(199, 33);
             this.regionDrop.TabIndex = 4;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(12, 70);
+            this.label1.Location = new System.Drawing.Point(34, 100);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 20);
+            this.label1.Size = new System.Drawing.Size(90, 31);
             this.label1.TabIndex = 5;
             this.label1.Text = "Region:";
             // 
@@ -107,9 +115,10 @@ namespace ValorantStreamOverlay
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(12, 101);
+            this.label2.Location = new System.Drawing.Point(57, 145);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 20);
+            this.label2.Size = new System.Drawing.Size(61, 31);
             this.label2.TabIndex = 6;
             this.label2.Text = "Skin:";
             // 
@@ -118,7 +127,7 @@ namespace ValorantStreamOverlay
             this.ski.FormattingEnabled = true;
             this.ski.Location = new System.Drawing.Point(137, 129);
             this.ski.Name = "ski";
-            this.ski.Size = new System.Drawing.Size(134, 23);
+            this.ski.Size = new System.Drawing.Size(134, 33);
             this.ski.TabIndex = 7;
             // 
             // skinDrop
@@ -132,18 +141,20 @@ namespace ValorantStreamOverlay
             "Purple",
             "Gray",
             "Custom"});
-            this.skinDrop.Location = new System.Drawing.Point(77, 101);
+            this.skinDrop.Location = new System.Drawing.Point(132, 147);
+            this.skinDrop.Margin = new System.Windows.Forms.Padding(4);
             this.skinDrop.Name = "skinDrop";
-            this.skinDrop.Size = new System.Drawing.Size(134, 23);
+            this.skinDrop.Size = new System.Drawing.Size(199, 33);
             this.skinDrop.TabIndex = 7;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(12, 132);
+            this.label3.Location = new System.Drawing.Point(30, 195);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 20);
+            this.label3.Size = new System.Drawing.Size(94, 31);
             this.label3.TabIndex = 8;
             this.label3.Text = "Refresh:";
             // 
@@ -153,16 +164,42 @@ namespace ValorantStreamOverlay
             this.refreshDrop.Items.AddRange(new object[] {
             "30 Seconds",
             "60 Seconds"});
-            this.refreshDrop.Location = new System.Drawing.Point(77, 132);
+            this.refreshDrop.Location = new System.Drawing.Point(132, 193);
+            this.refreshDrop.Margin = new System.Windows.Forms.Padding(4);
             this.refreshDrop.Name = "refreshDrop";
-            this.refreshDrop.Size = new System.Drawing.Size(134, 23);
+            this.refreshDrop.Size = new System.Drawing.Size(199, 33);
             this.refreshDrop.TabIndex = 9;
+            // 
+            // languageDrop
+            // 
+            this.languageDrop.FormattingEnabled = true;
+            this.languageDrop.Items.AddRange(new object[]
+            {
+                "English",
+                "Spanish",
+                "French"});
+            this.languageDrop.Location = new System.Drawing.Point(133, 242);
+            this.languageDrop.Name = "languageDrop";
+            this.languageDrop.Size = new System.Drawing.Size(199, 33);
+            this.languageDrop.TabIndex = 10;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(8, 244);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(120, 31);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Language:";
             // 
             // Settings
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(229, 199);
+            this.ClientSize = new System.Drawing.Size(358, 343);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.languageDrop);
             this.Controls.Add(this.refreshDrop);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.skinDrop);
@@ -173,6 +210,7 @@ namespace ValorantStreamOverlay
             this.Controls.Add(this.applyButton);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.usernameTextBox);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Settings";
             this.Text = "Settings";
             this.Load += new System.EventHandler(this.Settings_Load);
@@ -194,5 +232,7 @@ namespace ValorantStreamOverlay
         private System.Windows.Forms.ComboBox skinDrop;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox refreshDrop;
+        private System.Windows.Forms.ComboBox languageDrop;
+        private System.Windows.Forms.Label label4;
     }
 }

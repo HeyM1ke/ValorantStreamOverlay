@@ -30,6 +30,7 @@ namespace ValorantStreamOverlay
         public static string username;
         public static string password;
         public static string region;
+        public static string language;
         public static int skin;
         public static int refreshTimeinSeconds;
         public Timer relogTimer;
@@ -67,16 +68,32 @@ namespace ValorantStreamOverlay
                 password = Properties.Settings.Default.password;
                 region = new SettingsParser().ReadRegion(Properties.Settings.Default.region).GetAwaiter().GetResult();
                 refreshTimeinSeconds = new SettingsParser().ReadDelay(Properties.Settings.Default.region).GetAwaiter().GetResult();
+                language = new SettingsParser().ReadLanguage(Properties.Settings.Default.language).GetAwaiter().GetResult();
                 new SettingsParser().ReadSkin(Properties.Settings.Default.skin).GetAwaiter();
                 
                 
                 login();
 
                 UpdateLatest();
-                new RankDetection();
-
                 StartPointRefresh();
                 StartRELOGTimer();
+
+                if (language == "es")
+                {
+                    new RankDetecionES();
+
+                }
+
+                if (language == "en")
+                {
+                    new RankDetection();
+
+                }
+
+                if (language == "fr")
+                {
+                    new RankDetecionFR();
+                }
             }
 
         }

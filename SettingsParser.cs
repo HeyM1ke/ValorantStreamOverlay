@@ -35,6 +35,8 @@ namespace ValorantStreamOverlay
             return region;
         }
 
+        
+
         public async Task ReadSkin(int skinNumber)
         {
             //Depending on the skin number it will set the background image.
@@ -73,7 +75,24 @@ namespace ValorantStreamOverlay
                     break;
             }
         }
+        public async Task<string> ReadLanguage(int languageName)
+        {
+            string language = "en";
 
+            switch (languageName)
+            {
+                case 0:
+                    language = "en";
+                    break;
+                case 1:
+                    language = "es";
+                    break;
+                case 2:
+                    language = "fr";
+                    break;
+            }
+            return language;
+        }
         public async Task<int> ReadDelay(int delayNumber)
         {
             if (delayNumber != null)

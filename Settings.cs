@@ -31,6 +31,7 @@ namespace ValorantStreamOverlay
             Properties.Settings.Default.region = regionDrop.SelectedIndex;
             Properties.Settings.Default.skin = skinDrop.SelectedIndex;
             Properties.Settings.Default.refresh = refreshDrop.SelectedIndex;
+            Properties.Settings.Default.language = languageDrop.SelectedIndex;
             Properties.Settings.Default.Save();
             //After Setting user inputs to settings, ask user to reboot program :)
             DialogResult dialogResult =
@@ -53,6 +54,7 @@ namespace ValorantStreamOverlay
             regionDrop.SelectedIndex = Properties.Settings.Default.region;
             skinDrop.SelectedIndex = Properties.Settings.Default.skin;
             refreshDrop.SelectedIndex = Properties.Settings.Default.refresh;
+            languageDrop.SelectedIndex = Properties.Settings.Default.language;
         }
     }
 }
