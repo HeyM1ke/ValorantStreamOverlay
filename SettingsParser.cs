@@ -27,7 +27,7 @@ namespace ValorantStreamOverlay
                 case 2:
                     region = "kr";
                     break;
-                case 4:
+                case 3:
                     region = "ap";
                     break;
             }
