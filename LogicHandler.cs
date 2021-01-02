@@ -49,7 +49,11 @@ namespace ValorantStreamOverlay
         {
 
             if (string.IsNullOrEmpty(Properties.Settings.Default.password) || string.IsNullOrEmpty(Properties.Settings.Default.username))
-                MessageBox.Show("Welcome, You have to set your username and password in the settings menu");
+            {
+                MessageBox.Show("You have to set your username and password in the settings menu", "Welcome", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Settings settingsPage = new Settings();
+                settingsPage.ShowDialog();
+            }
             else
             {
                 username = Properties.Settings.Default.username;
