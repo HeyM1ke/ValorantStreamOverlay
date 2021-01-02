@@ -61,7 +61,7 @@ namespace ValorantStreamOverlay
             this.cancelButton.Location = new System.Drawing.Point(120, 299);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
-            this.cancelButton.TabIndex = 1;
+            this.cancelButton.TabIndex = 15;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
@@ -72,7 +72,7 @@ namespace ValorantStreamOverlay
             this.applyButton.Location = new System.Drawing.Point(39, 299);
             this.applyButton.Name = "applyButton";
             this.applyButton.Size = new System.Drawing.Size(75, 23);
-            this.applyButton.TabIndex = 2;
+            this.applyButton.TabIndex = 14;
             this.applyButton.Text = "APPLY";
             this.applyButton.UseVisualStyleBackColor = true;
             this.applyButton.Click += new System.EventHandler(this.applyButton_Click);
@@ -84,7 +84,7 @@ namespace ValorantStreamOverlay
             this.passwordTextBox.PasswordChar = '*';
             this.passwordTextBox.PlaceholderText = "Riot Games Password";
             this.passwordTextBox.Size = new System.Drawing.Size(199, 23);
-            this.passwordTextBox.TabIndex = 3;
+            this.passwordTextBox.TabIndex = 1;
             this.passwordTextBox.UseSystemPasswordChar = true;
             // 
             // regionDrop
@@ -98,7 +98,7 @@ namespace ValorantStreamOverlay
             this.regionDrop.Location = new System.Drawing.Point(88, 69);
             this.regionDrop.Name = "regionDrop";
             this.regionDrop.Size = new System.Drawing.Size(134, 23);
-            this.regionDrop.TabIndex = 4;
+            this.regionDrop.TabIndex = 3;
             // 
             // label1
             // 
@@ -107,7 +107,7 @@ namespace ValorantStreamOverlay
             this.label1.Location = new System.Drawing.Point(23, 69);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 20);
-            this.label1.TabIndex = 5;
+            this.label1.TabIndex = 2;
             this.label1.Text = "Region:";
             // 
             // label2
@@ -117,7 +117,7 @@ namespace ValorantStreamOverlay
             this.label2.Location = new System.Drawing.Point(23, 100);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 20);
-            this.label2.TabIndex = 6;
+            this.label2.TabIndex = 4;
             this.label2.Text = "Skin:";
             // 
             // ski
@@ -142,7 +142,7 @@ namespace ValorantStreamOverlay
             this.skinDrop.Location = new System.Drawing.Point(88, 100);
             this.skinDrop.Name = "skinDrop";
             this.skinDrop.Size = new System.Drawing.Size(134, 23);
-            this.skinDrop.TabIndex = 7;
+            this.skinDrop.TabIndex = 5;
             // 
             // label3
             // 
@@ -151,7 +151,7 @@ namespace ValorantStreamOverlay
             this.label3.Location = new System.Drawing.Point(23, 131);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 20);
-            this.label3.TabIndex = 8;
+            this.label3.TabIndex = 6;
             this.label3.Text = "Refresh:";
             // 
             // refreshDrop
@@ -163,7 +163,7 @@ namespace ValorantStreamOverlay
             this.refreshDrop.Location = new System.Drawing.Point(88, 131);
             this.refreshDrop.Name = "refreshDrop";
             this.refreshDrop.Size = new System.Drawing.Size(134, 23);
-            this.refreshDrop.TabIndex = 9;
+            this.refreshDrop.TabIndex = 7;
             // 
             // label4
             // 
@@ -172,7 +172,7 @@ namespace ValorantStreamOverlay
             this.label4.Location = new System.Drawing.Point(23, 167);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(138, 20);
-            this.label4.TabIndex = 10;
+            this.label4.TabIndex = 8;
             this.label4.Text = "Twitch Bot Settings:";
             // 
             // twitchChannelname
@@ -207,7 +207,7 @@ namespace ValorantStreamOverlay
             this.label5.Location = new System.Drawing.Point(49, 191);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(79, 15);
-            this.label5.TabIndex = 17;
+            this.label5.TabIndex = 9;
             this.label5.Text = "Turn On Bot?:";
             // 
             // twitchBotCheck
@@ -216,7 +216,7 @@ namespace ValorantStreamOverlay
             this.twitchBotCheck.Location = new System.Drawing.Point(134, 190);
             this.twitchBotCheck.Name = "twitchBotCheck";
             this.twitchBotCheck.Size = new System.Drawing.Size(61, 19);
-            this.twitchBotCheck.TabIndex = 18;
+            this.twitchBotCheck.TabIndex = 10;
             this.twitchBotCheck.Text = "Enable";
             this.twitchBotCheck.UseVisualStyleBackColor = true;
             // 
@@ -241,7 +241,10 @@ namespace ValorantStreamOverlay
             this.Controls.Add(this.applyButton);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.usernameTextBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Settings";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Settings";
             this.Load += new System.EventHandler(this.Settings_Load);
             this.ResumeLayout(false);
