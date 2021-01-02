@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using RestSharp;
@@ -15,14 +11,16 @@ namespace ValorantStreamOverlay
 {
     class RankDetection
     {
-        private dynamic rankJson;
-        private int currentRP;
+        public static dynamic rankJson;
+        public static int currentRP;
+        public static string rankName;
         public RankDetection()
         {
             //Start Update
             GetCloudRankJSON().GetAwaiter().GetResult();
             int rankNum = UPDATECompRankAsync().GetAwaiter().GetResult();
             RankParser(rankNum);
+            
         }
 
         public void UpdateRank()
@@ -85,12 +83,12 @@ namespace ValorantStreamOverlay
             var cloudJsonDeserial = JsonConvert.DeserializeObject(rankJson);
             JToken cloudJson = JToken.FromObject(cloudJsonDeserial);
             string rankNameLower = cloudJson["Ranks"][rankNumber.ToString()].Value<string>();
-            string rankNameALPHA = rankNameLower.ToUpper();
+            rankName = rankNameLower.ToUpper();
 
 
             Trace.Write("Setting Rank To Valid Rank Num");
 
-            LogicHandler.ValorantOver.rankingLabel.Text = rankNameALPHA;
+            LogicHandler.ValorantOver.rankingLabel.Text = rankName;
 
             var resource = Properties.Resources.ResourceManager.GetObject("TX_CompetitiveTier_Large_" + rankNumber);
             Bitmap myImage = (Bitmap)resource;
@@ -99,111 +97,8 @@ namespace ValorantStreamOverlay
             LogicHandler.ValorantOver.rankPointsElo.Text =
                 $"{currentRP} RP | {(rankNumber * 100) - 300 + currentRP} ELO";
 
-
-            /*switch (rankNumber)
-            {
-                case (0):
-                    LogicHandler.ValorantOver.rankingLabel.Text = rankNameALPHA;
-                    LogicHandler.ValorantOver.rankIconBox.Image = Properties.Resources.TX_CompetitiveTier_Large_0;
-                    break;
-                case (1):
-                    LogicHandler.ValorantOver.rankingLabel.Text = rankNameALPHA;
-                    LogicHandler.ValorantOver.rankIconBox.Image = Properties.Resources.TX_CompetitiveTier_Large_1;
-                    break;
-                case (2):
-                    LogicHandler.ValorantOver.rankingLabel.Text = rankNameALPHA;
-                    LogicHandler.ValorantOver.rankIconBox.Image = Properties.Resources.TX_CompetitiveTier_Large_2;
-                    break;
-                case (3):
-                    LogicHandler.ValorantOver.rankingLabel.Text = rankNameALPHA;
-                    LogicHandler.ValorantOver.rankIconBox.Image = Properties.Resources.TX_CompetitiveTier_Large_3;
-                    break;
-                case (4):
-                    LogicHandler.ValorantOver.rankingLabel.Text = rankNameALPHA;
-                    LogicHandler.ValorantOver.rankIconBox.Image = Properties.Resources.TX_CompetitiveTier_Large_4;
-                    break;
-                case (5):
-                    LogicHandler.ValorantOver.rankingLabel.Text = rankNameALPHA;
-                    LogicHandler.ValorantOver.rankIconBox.Image = Properties.Resources.TX_CompetitiveTier_Large_5;
-                    break;
-                case (6):
-                    LogicHandler.ValorantOver.rankingLabel.Text = rankNameALPHA;
-                    LogicHandler.ValorantOver.rankIconBox.Image = Properties.Resources.TX_CompetitiveTier_Large_6;
-                    break;
-                case (7):
-                    LogicHandler.ValorantOver.rankingLabel.Text = rankNameALPHA;
-                    LogicHandler.ValorantOver.rankIconBox.Image = Properties.Resources.TX_CompetitiveTier_Large_7;
-                    break;
-                case (8):
-                    LogicHandler.ValorantOver.rankingLabel.Text = rankNameALPHA;
-                    LogicHandler.ValorantOver.rankIconBox.Image = Properties.Resources.TX_CompetitiveTier_Large_8;
-                    break;
-                case (9):
-                    LogicHandler.ValorantOver.rankingLabel.Text = rankNameALPHA;
-                    LogicHandler.ValorantOver.rankIconBox.Image = Properties.Resources.TX_CompetitiveTier_Large_9;
-                    break;
-                case (10):
-                    LogicHandler.ValorantOver.rankingLabel.Text = rankNameALPHA;
-                    LogicHandler.ValorantOver.rankIconBox.Image = Properties.Resources.TX_CompetitiveTier_Large_10;
-                    break;
-                case (11):
-                    LogicHandler.ValorantOver.rankingLabel.Text = rankNameALPHA;
-                    LogicHandler.ValorantOver.rankIconBox.Image = Properties.Resources.TX_CompetitiveTier_Large_11;
-                    break;
-                case (12):
-                    LogicHandler.ValorantOver.rankingLabel.Text = rankNameALPHA;
-                    LogicHandler.ValorantOver.rankIconBox.Image = Properties.Resources.TX_CompetitiveTier_Large_12;
-                    break;
-                case (13):
-                    LogicHandler.ValorantOver.rankingLabel.Text = rankNameALPHA;
-                    LogicHandler.ValorantOver.rankIconBox.Image = Properties.Resources.TX_CompetitiveTier_Large_13;
-                    break;
-                case (14):
-                    LogicHandler.ValorantOver.rankingLabel.Text = rankNameALPHA;
-                    LogicHandler.ValorantOver.rankIconBox.Image = Properties.Resources.TX_CompetitiveTier_Large_14;
-                    break;
-                case (15):
-                    LogicHandler.ValorantOver.rankingLabel.Text = rankNameALPHA;
-                    LogicHandler.ValorantOver.rankIconBox.Image = Properties.Resources.TX_CompetitiveTier_Large_15;
-                    break;
-                case (16):
-                    LogicHandler.ValorantOver.rankingLabel.Text = rankNameALPHA;
-                    LogicHandler.ValorantOver.rankIconBox.Image = Properties.Resources.TX_CompetitiveTier_Large_16;
-                    break;
-                case (17):
-                    LogicHandler.ValorantOver.rankingLabel.Text = rankNameALPHA;
-                    LogicHandler.ValorantOver.rankIconBox.Image = Properties.Resources.TX_CompetitiveTier_Large_17;
-                    break;
-                case (18):
-                    LogicHandler.ValorantOver.rankingLabel.Text = rankNameALPHA;
-                    LogicHandler.ValorantOver.rankIconBox.Image = Properties.Resources.TX_CompetitiveTier_Large_18;
-                    break;
-                case (19):
-                    LogicHandler.ValorantOver.rankingLabel.Text = rankNameALPHA;
-                    LogicHandler.ValorantOver.rankIconBox.Image = Properties.Resources.TX_CompetitiveTier_Large_19;
-                    break;
-                case (20):
-                    LogicHandler.ValorantOver.rankingLabel.Text = rankNameALPHA;
-                    LogicHandler.ValorantOver.rankIconBox.Image = Properties.Resources.TX_CompetitiveTier_Large_20;
-                    break;
-                case (21):
-                    LogicHandler.ValorantOver.rankingLabel.Text = rankNameALPHA;
-                    LogicHandler.ValorantOver.rankIconBox.Image = Properties.Resources.TX_CompetitiveTier_Large_21;
-                    break;
-                case (22):
-                    LogicHandler.ValorantOver.rankingLabel.Text = rankNameALPHA;
-                    LogicHandler.ValorantOver.rankIconBox.Image = Properties.Resources.TX_CompetitiveTier_Large_22;
-                    break;
-                case (23):
-                    LogicHandler.ValorantOver.rankingLabel.Text = rankNameALPHA;
-                    LogicHandler.ValorantOver.rankIconBox.Image = Properties.Resources.TX_CompetitiveTier_Large_23;
-                    break;
-                case (24):
-                    LogicHandler.ValorantOver.rankingLabel.Text = rankNameALPHA;
-                    LogicHandler.ValorantOver.rankIconBox.Image = Properties.Resources.TX_CompetitiveTier_Large_24;
-                    break;
-
-            }*/
+            LogicHandler.currentMMRorELO = (rankNumber * 100) - 300 + currentRP;
+            LogicHandler.currentRankPoints = currentRP;
         }
 
        

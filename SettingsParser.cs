@@ -92,5 +92,26 @@ namespace ValorantStreamOverlay
 
 
         }
+
+        public async Task<bool> ReadTwitchBot()
+        {
+            //When Called start checking if settings are filling in.
+            if (Properties.Settings.Default.twitchbotEnabled)
+            {
+                if (string.IsNullOrEmpty(Properties.Settings.Default.twitchBotUsername) ||
+                    string.IsNullOrEmpty(Properties.Settings.Default.twitchChannel) ||
+                    string.IsNullOrEmpty(Properties.Settings.Default.twitchBotToken))
+                {
+                    Properties.Settings.Default.twitchbotEnabled = false;
+                    Properties.Settings.Default.Save();
+                    MessageBox.Show("Twitch Bot Settings are missing, please fill in all fields to use");
+                    Environment.Exit(1);
+                }
+
+                return true;
+            }
+            else
+                return false;
+        }
     }
 }

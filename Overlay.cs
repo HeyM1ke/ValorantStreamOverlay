@@ -14,7 +14,7 @@ namespace ValorantStreamOverlay
 {
     public partial class ValorantOverStream : Form
     {
-      
+        
 
         public ValorantOverStream()
         {
@@ -25,16 +25,16 @@ namespace ValorantStreamOverlay
 
         private void ValorantOverStream_Load(object sender, EventArgs e)
         {
-            //Check For updates
+            //Use the updator class to check if there is an update released.
             new Updator();
 
-            //Application.SetHighDpiMode(HighDpiMode.SystemAware);
+            
             backgroundPic.ContextMenuStrip = contextMenu;
             rankingLabel.Parent = backgroundPic;
             rankingLabel.BackColor = Color.Transparent;
             PrivateFontCollection pfc = new PrivateFontCollection();
             pfc.AddFontFile(Path.Combine(Directory.GetCurrentDirectory(), "references", "Anton.ttf"));
-            rankingLabel.Font = new Font(pfc.Families[0], 28, FontStyle.Regular);
+            
             
             //On Load, Set backing and Fonts to labels displaying Rank changes.
             Label[] rankChanges = {recentGame1, recentGame2, recentGame3};
@@ -44,11 +44,11 @@ namespace ValorantStreamOverlay
                 recentC.BackColor = Color.Transparent;
                 recentC.Font = new Font(pfc.Families[0], 14, FontStyle.Regular);
             }
-
+            rankingLabel.Font = new Font(pfc.Families[0], 28, FontStyle.Regular);
             rankIconBox.Parent = backgroundPic;
             rankIconBox.BackColor = Color.Transparent;
 
-            //Add Rank elo point label, set font and parent.. brb
+            //Add Rank elo point label, set font and parent..
             rankPointsElo.BackColor = Color.Transparent;
             rankPointsElo.Parent = backgroundPic;
             rankPointsElo.Font = new Font(pfc.Families[0], 18);
@@ -56,20 +56,13 @@ namespace ValorantStreamOverlay
             ValorantOverStream local = this;
             LogicHandler logic = new LogicHandler(local);
 
-
-
         }
 
-        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
-        {
-
-        }
 
         private void settingsMenuItem_Click(object sender, EventArgs e)
         {
             Settings settingsPage = new Settings();
             settingsPage.ShowDialog();
-
         }
     }
 }

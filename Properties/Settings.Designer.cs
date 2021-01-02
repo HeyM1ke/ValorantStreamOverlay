@@ -82,5 +82,53 @@ namespace ValorantStreamOverlay.Properties {
                 this["skin"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string twitchChannel {
+            get {
+                return ((string)(this["twitchChannel"]));
+            }
+            set {
+                this["twitchChannel"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string twitchBotUsername {
+            get {
+                return ((string)(this["twitchBotUsername"]));
+            }
+            set {
+                this["twitchBotUsername"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string twitchBotToken {
+            get {
+                return ((string)(this["twitchBotToken"]));
+            }
+            set {
+                this["twitchBotToken"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool twitchbotEnabled {
+            get {
+                return ((bool)(this["twitchbotEnabled"]));
+            }
+            set {
+                this["twitchbotEnabled"] = value;
+            }
+        }
     }
 }

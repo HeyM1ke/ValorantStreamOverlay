@@ -20,24 +20,22 @@ namespace ValorantStreamOverlay
 
     class LogicHandler
     {
-        private static string referencesLoc =
-            Path.Combine(Directory.GetCurrentDirectory(), "references", "config.json");
-
         public static string AccessToken { get; set; }
         public static string EntitlementToken { get; set; }
         public static string UserID { get; set; }
 
-        public static string username;
-        public static string password;
-        public static string region;
-        public static int skin;
+        public static string username, password, region;
         public static int refreshTimeinSeconds;
-        public Timer relogTimer;
-        public Timer pointTimer;
+        public Timer relogTimer, pointTimer;
 
         public static ValorantOverStream ValorantOver;
-        public  LogicHandler logic;
+        public LogicHandler logic;
         public RankDetection rankDetect;
+
+        //Twitch Bot Variables
+        public static int currentRankPoints, currentMMRorELO;
+        private bool botEnabled;
+
         public LogicHandler(ValorantOverStream instance)
         {
             logic = this;
@@ -45,15 +43,6 @@ namespace ValorantStreamOverlay
 
             Trace.Write("Reading Settings");
             ReadSettings();
-            //Login now attempts when reading settings.
-            Trace.Write("Attempting to Login");
-            /*login();
-
-            UpdateLatest();
-            new RankDetection();
-
-            StartPointRefresh();
-            StartRELOGTimer();*/
         }
 
          void ReadSettings()
@@ -68,21 +57,22 @@ namespace ValorantStreamOverlay
                 region = new SettingsParser().ReadRegion(Properties.Settings.Default.region).GetAwaiter().GetResult();
                 refreshTimeinSeconds = new SettingsParser().ReadDelay(Properties.Settings.Default.region).GetAwaiter().GetResult();
                 new SettingsParser().ReadSkin(Properties.Settings.Default.skin).GetAwaiter();
-                
-                
-                login();
+                botEnabled = new SettingsParser().ReadTwitchBot().GetAwaiter().GetResult();
 
-                UpdateLatest();
+                RiotGamesLogin();
+
+                UpdateToLatestGames();
                 new RankDetection();
 
                 StartPointRefresh();
                 StartRELOGTimer();
+                StartTwitchBot();
             }
 
         }
 
 
-        void login()
+        void RiotGamesLogin()
         {
             try
             {
@@ -143,27 +133,16 @@ namespace ValorantStreamOverlay
 
 
 
-        async Task UpdateLatest()
+        async Task UpdateToLatestGames()
         {
             Trace.Write("UPDATING");
-            //var test = Task.Run(() => PingCompApiAsync());
             dynamic response = GetCompApiAsync().GetAwaiter().GetResult();
-            if (response == null)
+            if (response != null)
             {
-
-            }
-            else
-            {
-                dynamic matches = response["Matches"];
-                //parseResponse(matches);
-                Trace.Write("Checkpoint 1");
                 int[] points = new int[3];
-
-                dynamic test = matches;
-                Console.WriteLine(test);
-                int count = 0;
-                int i = 0;
-                foreach (var game in test)
+                dynamic matches = response["Matches"];
+                int count = 0, i  = 0;
+                foreach (var game in matches)
                 {
 
                     if (game["CompetitiveMovement"] == "MOVEMENT_UNKNOWN")
@@ -175,7 +154,7 @@ namespace ValorantStreamOverlay
                         // player promoted
                         int before = game["TierProgressBeforeUpdate"];
                         int after = game["TierProgressAfterUpdate"];
-                        int differ = (after - before) + 100; // positive num
+                        int differ = (after - before) + 100; 
                         points[i++] = differ;
                         count++;
                     }
@@ -184,7 +163,7 @@ namespace ValorantStreamOverlay
                         // player demoted
                         int before = game["TierProgressBeforeUpdate"];
                         int after = game["TierProgressAfterUpdate"];
-                        int differ = (after - before) - 100; // negative num
+                        int differ = (after - before) - 100; 
                         points[i++] = differ;
                         count++;
                     }
@@ -193,24 +172,18 @@ namespace ValorantStreamOverlay
                         int before = game["TierProgressBeforeUpdate"];
                         int after = game["TierProgressAfterUpdate"];
                         points[i++] = after - before;
-                        // If a change is detected
-                        // if a change is detected, then add number difference between the after - the before to an array
-                        // that contains 3 values, 3 values are then sent to SetChangesToOverlay(array here <--- )
-                        // at the limit of 3, run loop, til array hits 3 containing values. then send array.
                         count++;
                     }
 
                     if (count >= 3) // 3 recent matches found
                         break;
                 }
-                Trace.Write("Checkpoint 2");
+                //Send Points to Function that changes the UI
                 SetChangesToOverlay(points).GetAwaiter();
             }
-            
+
         }
 
-
-        //Testing:
 
         private async Task<JObject> GetCompApiAsync()
         {
@@ -226,56 +199,6 @@ namespace ValorantStreamOverlay
             return rankedResp.IsSuccessful ? JsonConvert.DeserializeObject<JObject>(rankedResp.Content) : null;
         }
 
-        /*private void parseResponse(JObject response)
-        {
-            int[] points = new int[3];
-
-            dynamic test = response;
-
-            int count = 0;
-            int i = 0;
-            foreach (var game in test)
-            {
-                if (game["CompetitiveMovement"] == "MOVEMENT_UNKNOWN")
-                {
-                    // not a ranked game; 
-                }
-                else if (game["CompetitiveMovement"] == "PROMOTED")
-                {
-                    // player promoted
-                    int before = game["TierProgressBeforeUpdate"];
-                    int after = game["TierProgressAfterUpdate"];
-                    int differ = (after - before) + 100;
-                    points[i++] = differ;
-                    count++;
-                }
-                else if (game["CompetitiveMovement"] == "DEMOTED")
-                {
-                    // player demoted
-                    int before = game["TierProgressBeforeUpdate"];
-                    int after = game["TierProgressAfterUpdate"];
-                    int differ = (after - before) - 100;
-                    points[i++] = differ;
-                    count++;
-                }
-                else
-                {
-                    int before = game["TierProgressBeforeUpdate"];
-                    int after = game["TierProgressAfterUpdate"];
-                    points[i++] = before - after;
-                    // If a change is detected
-                    // if a change is detected, then add number difference between the after - the before to an array
-                    // that contains 3 values, 3 values are then sent to SetChangesToOverlay(array here <--- )
-                    // at the limit of 3, run loop, til array hits 3 containing values. then send array.
-                    count++;
-                }
-
-                if (count >= 3) // 3 recent matches found
-                    break;
-            }
-            //Need to add login :)
-            SetChangesToOverlay(points);
-        }*/
 
         private async Task SetChangesToOverlay(int[] pointchange)
         {
@@ -288,14 +211,7 @@ namespace ValorantStreamOverlay
                     //In the case of a demotion or a loss
                     pointchange[i] *= -1;
                     string change;
-                    if (pointchange[i] <= 9)
-                    {
-                        change = $"0{pointchange[i]}";
-                    }
-                    else
-                    {
-                        change = pointchange[i].ToString();
-                    }
+                    change = pointchange[i] <= 9 ? $"0{pointchange[i]}" : pointchange[i].ToString();
                     
                     rankChanges[i].ForeColor = Color.Red;
                     rankChanges[i].Text = $"-{change}";
@@ -304,14 +220,7 @@ namespace ValorantStreamOverlay
                 {
                     //int checker = pointchange[i] * -1;
                     string change;
-                    if (pointchange[i] <= 9)
-                    {
-                        change = $"0{pointchange[i]}";
-                    }
-                    else
-                    {
-                        change = pointchange[i].ToString();
-                    }
+                    change = pointchange[i] <= 9 ? $"0{pointchange[i]}" : pointchange[i].ToString();
 
                     rankChanges[i].ForeColor = Color.LimeGreen;
                     rankChanges[i].Text = $"+{change}";
@@ -335,7 +244,7 @@ namespace ValorantStreamOverlay
 
         private void pointTimer_Tick(object sender, EventArgs e)
         {
-            UpdateLatest().GetAwaiter();
+            UpdateToLatestGames().GetAwaiter();
 
             if (rankDetect == null)
             {
@@ -358,11 +267,22 @@ namespace ValorantStreamOverlay
 
         private void relogTimer_Tick(object sender, EventArgs e)
         {
-            pointTimer.Stop(); 
-            login();
+            pointTimer.Stop();
+            RiotGamesLogin();
             pointTimer.Start();
         }
 
-
+        public void StartTwitchBot()
+        {
+            if (botEnabled)
+            {
+                Trace.WriteLine("Bot enabled");
+                TwitchIntegration bot = new TwitchIntegration();
+            }
+            else
+            {
+                Trace.WriteLine("Bot not enabled");
+            }
+        }
     }
 }
