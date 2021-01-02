@@ -29,6 +29,7 @@ namespace ValorantStreamOverlay
             Properties.Settings.Default.region = regionDrop.SelectedIndex;
             Properties.Settings.Default.skin = skinDrop.SelectedIndex;
             Properties.Settings.Default.refresh = refreshDrop.SelectedIndex;
+            Properties.Settings.Default.language = languageDrop.SelectedIndex;
 
             // Save Twitch bot settings
             Properties.Settings.Default.twitchbotEnabled = twitchBotCheck.Checked;
@@ -59,6 +60,7 @@ namespace ValorantStreamOverlay
             regionDrop.SelectedIndex = Properties.Settings.Default.region;
             skinDrop.SelectedIndex = Properties.Settings.Default.skin;
             refreshDrop.SelectedIndex = Properties.Settings.Default.refresh;
+            languageDrop.SelectedIndex = Properties.Settings.Default.language;
             
             //Twitch Bot Loading
             twitchChannelname.Text = Properties.Settings.Default.twitchChannel;
@@ -70,6 +72,22 @@ namespace ValorantStreamOverlay
         private void cancelButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab.Controls.Add(applyButton);
+            tabControl1.SelectedTab.Controls.Add(cancelButton);
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void applyButton_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

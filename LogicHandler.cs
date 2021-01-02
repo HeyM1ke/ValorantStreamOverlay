@@ -24,7 +24,7 @@ namespace ValorantStreamOverlay
         public static string EntitlementToken { get; set; }
         public static string UserID { get; set; }
 
-        public static string username, password, region;
+        public static string username, password, region, language;
         public static int refreshTimeinSeconds;
         public Timer relogTimer, pointTimer;
 
@@ -56,6 +56,7 @@ namespace ValorantStreamOverlay
                 password = Properties.Settings.Default.password;
                 region = new SettingsParser().ReadRegion(Properties.Settings.Default.region).GetAwaiter().GetResult();
                 refreshTimeinSeconds = new SettingsParser().ReadDelay(Properties.Settings.Default.region).GetAwaiter().GetResult();
+                language = new SettingsParser().ReadLanguage(Properties.Settings.Default.language).GetAwaiter().GetResult();
                 new SettingsParser().ReadSkin(Properties.Settings.Default.skin).GetAwaiter();
                 botEnabled = new SettingsParser().ReadTwitchBot().GetAwaiter().GetResult();
 

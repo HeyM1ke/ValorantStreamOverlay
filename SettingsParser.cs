@@ -74,6 +74,25 @@ namespace ValorantStreamOverlay
             }
         }
 
+        public async Task<string> ReadLanguage(int languageName)
+        {
+            string language = "en";
+
+            switch (languageName)
+            {
+                case 0:
+                    language = "en";
+                    break;
+                case 1:
+                    language = "es";
+                    break;
+                case 2:
+                    language = "fr";
+                    break;
+            }
+            return language;
+        }
+
         public async Task<int> ReadDelay(int delayNumber)
         {
             if (delayNumber != null)

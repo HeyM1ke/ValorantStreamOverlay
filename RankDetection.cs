@@ -76,6 +76,15 @@ namespace ValorantStreamOverlay
             IRestResponse rankResp = cloudRankJson.Get(rankRequest);
             rankJson = (rankResp.IsSuccessful) ? rankJson = rankResp.Content : rankJson = string.Empty;
         }
+
+
+        private async Task GetCloudRankJSON_ES()
+        {
+            IRestClient cloudRankJson = new RestClient(new Uri("https://502.wtf/ValorrankInfo.json"));
+            IRestRequest rankRequest = new RestRequest(Method.GET);
+            IRestResponse rankResp = cloudRankJson.Get(rankRequest);
+            rankJson = (rankResp.IsSuccessful) ? rankJson = rankResp.Content : rankJson = string.Empty;
+        }
         void RankParser(int rankNumber)
         {
             //Getting Errors when trying to pull the Json Data.
