@@ -32,6 +32,9 @@ namespace ValorantStreamOverlay
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ValorantOverStream));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.recentGame3_status = new System.Windows.Forms.PictureBox();
+            this.recentGame2_status = new System.Windows.Forms.PictureBox();
+            this.recentGame1_status = new System.Windows.Forms.PictureBox();
             this.recentGame3 = new System.Windows.Forms.Label();
             this.recentGame2 = new System.Windows.Forms.Label();
             this.recentGame1 = new System.Windows.Forms.Label();
@@ -42,6 +45,9 @@ namespace ValorantStreamOverlay
             this.contextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.settingsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.recentGame3_status)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recentGame2_status)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recentGame1_status)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rankIconBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.backgroundPic)).BeginInit();
             this.contextMenu.SuspendLayout();
@@ -49,6 +55,9 @@ namespace ValorantStreamOverlay
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.recentGame3_status);
+            this.panel1.Controls.Add(this.recentGame2_status);
+            this.panel1.Controls.Add(this.recentGame1_status);
             this.panel1.Controls.Add(this.recentGame3);
             this.panel1.Controls.Add(this.recentGame2);
             this.panel1.Controls.Add(this.recentGame1);
@@ -61,6 +70,36 @@ namespace ValorantStreamOverlay
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(398, 143);
             this.panel1.TabIndex = 0;
+            // 
+            // recentGame3_status
+            // 
+            this.recentGame3_status.BackColor = System.Drawing.Color.Transparent;
+            this.recentGame3_status.Location = new System.Drawing.Point(378, 115);
+            this.recentGame3_status.Name = "recentGame3_status";
+            this.recentGame3_status.Size = new System.Drawing.Size(16, 16);
+            this.recentGame3_status.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.recentGame3_status.TabIndex = 7;
+            this.recentGame3_status.TabStop = false;
+            // 
+            // recentGame2_status
+            // 
+            this.recentGame2_status.BackColor = System.Drawing.Color.Transparent;
+            this.recentGame2_status.Location = new System.Drawing.Point(317, 115);
+            this.recentGame2_status.Name = "recentGame2_status";
+            this.recentGame2_status.Size = new System.Drawing.Size(16, 16);
+            this.recentGame2_status.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.recentGame2_status.TabIndex = 7;
+            this.recentGame2_status.TabStop = false;
+            // 
+            // recentGame1_status
+            // 
+            this.recentGame1_status.BackColor = System.Drawing.Color.Transparent;
+            this.recentGame1_status.Location = new System.Drawing.Point(257, 115);
+            this.recentGame1_status.Name = "recentGame1_status";
+            this.recentGame1_status.Size = new System.Drawing.Size(16, 16);
+            this.recentGame1_status.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.recentGame1_status.TabIndex = 7;
+            this.recentGame1_status.TabStop = false;
             // 
             // recentGame3
             // 
@@ -178,6 +217,9 @@ namespace ValorantStreamOverlay
             this.Load += new System.EventHandler(this.ValorantOverStream_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.recentGame3_status)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recentGame2_status)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recentGame1_status)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rankIconBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.backgroundPic)).EndInit();
             this.contextMenu.ResumeLayout(false);
@@ -197,6 +239,9 @@ namespace ValorantStreamOverlay
         private System.Windows.Forms.ContextMenuStrip contextMenu;
         public System.Windows.Forms.ToolStripMenuItem settingsMenuItem;
         public System.Windows.Forms.PictureBox backgroundPic;
+        public System.Windows.Forms.PictureBox recentGame1_status;
+        public System.Windows.Forms.PictureBox recentGame3_status;
+        public System.Windows.Forms.PictureBox recentGame2_status;
     }
 }
 

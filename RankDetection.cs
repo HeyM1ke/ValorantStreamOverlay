@@ -18,9 +18,7 @@ namespace ValorantStreamOverlay
         {
             //Start Update
             GetCloudRankJSON().GetAwaiter().GetResult();
-            int rankNum = UPDATECompRankAsync().GetAwaiter().GetResult();
-            RankParser(rankNum);
-            
+            UpdateRank();
         }
 
         public void UpdateRank()
@@ -76,10 +74,11 @@ namespace ValorantStreamOverlay
             IRestResponse rankResp = cloudRankJson.Get(rankRequest);
             rankJson = (rankResp.IsSuccessful) ? rankJson = rankResp.Content : rankJson = string.Empty;
         }
+
         void RankParser(int rankNumber)
         {
             //Getting Errors when trying to pull the Json Data.
-            
+
             var cloudJsonDeserial = JsonConvert.DeserializeObject(rankJson);
             JToken cloudJson = JToken.FromObject(cloudJsonDeserial);
             string rankNameLower = cloudJson["Ranks"][rankNumber.ToString()].Value<string>();
@@ -100,7 +99,5 @@ namespace ValorantStreamOverlay
             LogicHandler.currentMMRorELO = (rankNumber * 100) - 300 + currentRP;
             LogicHandler.currentRankPoints = currentRP;
         }
-
-       
     }
 }
