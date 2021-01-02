@@ -207,7 +207,7 @@ namespace ValorantStreamOverlay
             this.applyButton.TabIndex = 12;
             this.applyButton.Text = "APPLY";
             this.applyButton.UseVisualStyleBackColor = true;
-            this.applyButton.Click += new System.EventHandler(this.applyButton_Click_1);
+            this.applyButton.Click += new System.EventHandler(this.applyButton_Click);
             // 
             // cancelButton
             // 

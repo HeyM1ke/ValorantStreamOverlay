@@ -36,7 +36,6 @@ namespace ValorantStreamOverlay
             Properties.Settings.Default.twitchBotToken = twitchBotToken.Text;
             Properties.Settings.Default.twitchBotUsername = twitchbotUsername.Text;
             Properties.Settings.Default.twitchChannel = twitchChannelname.Text;
-
             Properties.Settings.Default.Save();
             //After Setting user inputs to settings, ask user to reboot program :)
             DialogResult dialogResult =

@@ -63,11 +63,31 @@ namespace ValorantStreamOverlay
                 RiotGamesLogin();
 
                 UpdateToLatestGames();
-                new RankDetection();
+
+
+                if (language == "es")
+                {
+                    new RankDetecionES();
+
+                }
+
+                if (language == "en")
+                {
+                    new RankDetection();
+
+                }
+
+                if (language == "fr")
+                {
+                    new RankDetecionFR();
+                }
+
 
                 StartPointRefresh();
                 StartRELOGTimer();
                 StartTwitchBot();
+
+
             }
 
         }
