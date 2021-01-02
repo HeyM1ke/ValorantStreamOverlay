@@ -61,7 +61,7 @@ namespace ValorantStreamOverlay
         {
 
             if (string.IsNullOrEmpty(Properties.Settings.Default.password) || string.IsNullOrEmpty(Properties.Settings.Default.username))
-                MessageBox.Show("Welcome, You have to set your username and password in the settings menu");
+                MessageBox.Show("Welcome, You have to set your username and password in the settings menu. (Right click anywhere in the program)");
             else
             {
                 username = Properties.Settings.Default.username;
@@ -143,7 +143,7 @@ namespace ValorantStreamOverlay
                     dynamic userid = JsonConvert.DeserializeObject(userid_response);
                     JToken useridObj = JObject.FromObject(userid);
 
-                    //Console.WriteLine(userid_response);
+                    Console.WriteLine(userid_response);
 
                     UserID = useridObj["sub"].Value<string>();
                 }
