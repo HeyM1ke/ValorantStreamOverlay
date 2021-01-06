@@ -5,14 +5,14 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
     <ApplicationIcon>icon.ico</ApplicationIcon>
-    <Version>1.1.0.1</Version>
+    <Version>1.1.0.5</Version>
     <Company>RumbleMike</Company>
     <Description>C# Program that offers an overlay for content creators.</Description>
     <Copyright />
     <PackageIcon>icon.png</PackageIcon>
     <RepositoryUrl>https://github.com/RumbleMike/ValorantStreamOverlay</RepositoryUrl>
     <PackageReleaseNotes>https://github.com/RumbleMike/ValorantStreamOverlay/releases/latest</PackageReleaseNotes>
-    <AssemblyVersion>1.1.0.1</AssemblyVersion>
+    <AssemblyVersion>1.1.0.5</AssemblyVersion>
     <FileVersion>1.1.0.0</FileVersion>
     <SignAssembly>false</SignAssembly>
     <AssemblyOriginatorKeyFile>test.snk</AssemblyOriginatorKeyFile>
