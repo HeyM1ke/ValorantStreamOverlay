@@ -22,7 +22,7 @@ namespace ValorantStreamOverlay
             };
 
             RestRequest request = new RestRequest(Method.POST);
-            string body = "{\"client_id\":\"play-valorant-web-prod\",\"nonce\":\"1\",\"redirect_uri\":\"https://beta.playvalorant.com/opt_in" + "\",\"response_type\":\"token id_token\",\"scope\":\"account openid\"}";
+            string body = "{\"client_id\":\"play-valorant-web-prod\",\"nonce\":\"1\",\"redirect_uri\":\"https://playvalorant.com" + "\",\"response_type\":\"token id_token\",\"scope\":\"account openid\"}";
             request.AddJsonBody(body);
             client.Execute(request);
         }
