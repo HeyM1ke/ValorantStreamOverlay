@@ -1,5 +1,3 @@
-# Program no longer works, as of 1/6/2021 at 2:55pm Est. 
-
 <h1 align="center">
   <img src="https://cdn.discordapp.com/attachments/748560845230964869/791900465632641034/ValoverlayLogo.png">
   <br>
