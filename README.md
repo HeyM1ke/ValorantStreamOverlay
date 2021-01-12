@@ -12,6 +12,9 @@
   
 </p>
 
+## Episode 2 will include Rank Rating in game, program will continue to function. Remember this is a streamoverlay.
+
+
 ## Program is not affliated with Riot Games, this was made by Rumblemike by himself. If you are Riot please scroll all the way down for your message <3
 
 ## About
