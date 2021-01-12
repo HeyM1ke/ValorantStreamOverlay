@@ -45,11 +45,15 @@ namespace ValorantStreamOverlay
             ReadSettings();
         }
 
-         void ReadSettings()
+        void ReadSettings()
         {
 
             if (string.IsNullOrEmpty(Properties.Settings.Default.password) || string.IsNullOrEmpty(Properties.Settings.Default.username))
-                MessageBox.Show("Welcome, You have to set your username and password in the settings menu");
+            {
+                MessageBox.Show("You have to set your username and password in the settings menu", "Welcome", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Settings settingsPage = new Settings();
+                settingsPage.ShowDialog();
+            }
             else
             {
                 username = Properties.Settings.Default.username;
@@ -122,7 +126,7 @@ namespace ValorantStreamOverlay
                 }
 
 
-                
+
 
             }
             catch (Exception e)
@@ -131,63 +135,33 @@ namespace ValorantStreamOverlay
             }
         }
 
-
-
         async Task UpdateToLatestGames()
         {
             Trace.Write("UPDATING");
-            dynamic response = GetCompApiAsync().GetAwaiter().GetResult();
+            var response = GetCompApiAsync().GetAwaiter().GetResult();
             if (response != null)
             {
-                int[] points = new int[3];
-                dynamic matches = response["Matches"];
-                int count = 0, i  = 0;
+                var gameStats = new List<Tuple<int, Game.CompetitiveMovements>>();
+                var matches = JsonConvert.DeserializeObject<Game[]>(response["Matches"].ToString());
                 foreach (var game in matches)
                 {
+                    // not a ranked game
+                    if (game.GetCompetitiveMovement == Game.CompetitiveMovements.MovementUnknown)
+                        continue;
 
-                    if (game["CompetitiveMovement"] == "MOVEMENT_UNKNOWN")
-                    {
-                        // not a ranked game
-                    }
-                    else if (game["CompetitiveMovement"] == "PROMOTED")
-                    {
-                        // player promoted
-                        int before = game["TierProgressBeforeUpdate"];
-                        int after = game["TierProgressAfterUpdate"];
-                        int differ = (after - before) + 100; 
-                        points[i++] = differ;
-                        count++;
-                    }
-                    else if (game["CompetitiveMovement"] == "DEMOTED")
-                    {
-                        // player demoted
-                        int before = game["TierProgressBeforeUpdate"];
-                        int after = game["TierProgressAfterUpdate"];
-                        int differ = (after - before) - 100; 
-                        points[i++] = differ;
-                        count++;
-                    }
-                    else
-                    {
-                        int before = game["TierProgressBeforeUpdate"];
-                        int after = game["TierProgressAfterUpdate"];
-                        points[i++] = after - before;
-                        count++;
-                    }
+                    gameStats.Add(Tuple.Create(game.Points, game.GetCompetitiveMovement));
 
-                    if (count >= 3) // 3 recent matches found
+                    if (gameStats.Count >= 3) // 3 recent matches found
                         break;
                 }
+
                 //Send Points to Function that changes the UI
-                SetChangesToOverlay(points).GetAwaiter();
+                SetChangesToOverlay(gameStats).GetAwaiter();
             }
-
         }
-
 
         private async Task<JObject> GetCompApiAsync()
         {
-            
             IRestClient compClient = new RestClient(new Uri($"https://pd.{region}.a.pvp.net/mmr/v1/players/{UserID}/competitiveupdates?startIndex=0&endIndex=20"));
             RestRequest compRequest = new RestRequest(Method.GET);
 
@@ -199,40 +173,45 @@ namespace ValorantStreamOverlay
             return rankedResp.IsSuccessful ? JsonConvert.DeserializeObject<JObject>(rankedResp.Content) : null;
         }
 
-
-        private async Task SetChangesToOverlay(int[] pointchange)
+        private async Task SetChangesToOverlay(List<Tuple<int, Game.CompetitiveMovements>> gameStats)
         {
-            Label[] rankChanges = { ValorantOver.recentGame1, ValorantOver.recentGame2, ValorantOver.recentGame3 };
-            for (int i = 0; i < pointchange.Length; i++)
+            var asd = Tuple.Create(ValorantOver.recentGame1, ValorantOver.recentGame1_status);
+            var rankChanges = new[] {
+                Tuple.Create(ValorantOver.recentGame1, ValorantOver.recentGame1_status),
+                Tuple.Create(ValorantOver.recentGame2, ValorantOver.recentGame2_status),
+                Tuple.Create(ValorantOver.recentGame3, ValorantOver.recentGame3_status)
+            };
+            for (int i = 0; i < gameStats.Count; i++)
             {
                 // neg num represents decrease in pts
-                if (pointchange[i] < 0)
-                {
-                    //In the case of a demotion or a loss
-                    pointchange[i] *= -1;
-                    string change;
-                    change = pointchange[i] <= 9 ? $"0{pointchange[i]}" : pointchange[i].ToString();
-                    
-                    rankChanges[i].ForeColor = Color.Red;
-                    rankChanges[i].Text = $"-{change}";
-                }
-                else if (pointchange[i] > 0)
-                {
-                    //int checker = pointchange[i] * -1;
-                    string change;
-                    change = pointchange[i] <= 9 ? $"0{pointchange[i]}" : pointchange[i].ToString();
+                var points = gameStats[i].Item1;
 
-                    rankChanges[i].ForeColor = Color.LimeGreen;
-                    rankChanges[i].Text = $"+{change}";
+                if (points == 0)
+                {
+                    rankChanges[i].Item1.ForeColor = Color.SlateGray;
+                    rankChanges[i].Item1.Text = "0";
                 }
                 else
                 {
-                    rankChanges[i].ForeColor = Color.SlateGray;
-                    rankChanges[i].Text = "0";
+                    var pointsText = $"{Math.Abs(points).ToString().PadLeft(2, '0')}";
+                    if (points < 0)
+                    {
+                        //In the case of a demotion or a loss
+                        rankChanges[i].Item1.ForeColor = Color.Red;
+                        rankChanges[i].Item1.Text = $"-{pointsText}";
+                    }
+                    else if (points > 0)
+                    {
+                        rankChanges[i].Item1.ForeColor = Color.LimeGreen;
+                        rankChanges[i].Item1.Text = $"+{pointsText}";
+                    }
                 }
+                
+                var resource = Properties.Resources.ResourceManager.GetObject($"TX_CompetitiveTierMovement_{Enum.GetName(typeof(Game.CompetitiveMovements), gameStats[i].Item2)}");
+                Bitmap myImage = (Bitmap)resource;
+                rankChanges[i].Item2.Image = myImage;
             }
         }
-
 
         private void StartPointRefresh()
         {
@@ -262,7 +241,7 @@ namespace ValorantStreamOverlay
             relogTimer.Tick += new EventHandler(relogTimer_Tick);
             relogTimer.Interval = 2700 * 1000;
             relogTimer.Start();
-            
+
         }
 
         private void relogTimer_Tick(object sender, EventArgs e)
