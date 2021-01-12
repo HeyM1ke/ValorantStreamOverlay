@@ -94,10 +94,16 @@ namespace ValorantStreamOverlay
             Bitmap myImage = (Bitmap)resource;
             LogicHandler.ValorantOver.rankIconBox.Image = myImage;
 
-            LogicHandler.ValorantOver.rankPointsElo.Text =
-                $"{currentRP} RP | {(rankNumber * 100) - 300 + currentRP} ELO";
-
-            LogicHandler.currentMMRorELO = (rankNumber * 100) - 300 + currentRP;
+            if (rankNumber > 3) {
+                LogicHandler.ValorantOver.rankPointsElo.Text =
+                    $"{currentRP} RP | {(rankNumber * 100) - 300 + currentRP} ELO";
+                LogicHandler.currentMMRorELO = (rankNumber * 100) - 300 + currentRP;
+            }
+            else {
+                LogicHandler.ValorantOver.rankPointsElo.Text =
+                    $"{currentRP} RP | 0 ELO";
+                LogicHandler.currentMMRorELO = 0;
+            }
             LogicHandler.currentRankPoints = currentRP;
         }
 
