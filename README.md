@@ -11,7 +11,10 @@
   <a href="https://twitter.com/Valorleaks"><img src="https://img.shields.io/badge/Twitter-@ValorLeaks-1da1f2.svg?logo=twitter?style=for-the-badge&logo=appveyor"></a>
   
 </p>
+
 ## Episode 2 will include Rank Rating in game, program will continue to function. Remember this is a streamoverlay.
+
+
 ## Program is not affliated with Riot Games, this was made by Rumblemike by himself. If you are Riot please scroll all the way down for your message <3
 
 ## About
