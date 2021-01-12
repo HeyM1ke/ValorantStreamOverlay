@@ -56,13 +56,13 @@ namespace ValorantStreamOverlay
             switch (e.ChatMessage.Message.ToLower())
             {
                 case "!elo":
-                    client.SendMessage(e.ChatMessage.Channel, $"{e.ChatMessage.Channel} currently has {LogicHandler.currentMMRorELO} ELO/MMR");
+                    client.SendMessage(e.ChatMessage.Channel, $"{e.ChatMessage.Channel} currently has {LogicHandler.currentMMRorELO} Total Rank Rating");
                     break;
                 case "!overlay":
                     client.SendMessage(e.ChatMessage.Channel, $"Overlay and Bot were created by @Rumblemikee, you can find the program here: https://github.com/RumbleMike/ValorantStreamOverlay/releases/latest");
                     break;
                 case "!rp":
-                    client.SendMessage(e.ChatMessage.Channel, $"{e.ChatMessage.Channel} currently has {LogicHandler.currentRankPoints} points in {RankDetection.rankName}");
+                    client.SendMessage(e.ChatMessage.Channel, $"{e.ChatMessage.Channel} currently has {LogicHandler.currentRankPoints} Rating in {RankDetection.rankName}");
                     break;
             }
 

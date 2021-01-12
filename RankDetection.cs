@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Drawing;
+using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using RestSharp;
@@ -41,6 +42,7 @@ namespace ValorantStreamOverlay
 
                 IRestResponse rankedResp = compRank.Get(compRequest);
 
+                Trace.WriteLine(rankedResp.Content);
                 if (rankedResp.IsSuccessful)
                 {
                     dynamic jsonconvert = JsonConvert.DeserializeObject<JObject>(rankedResp.Content);
@@ -51,7 +53,7 @@ namespace ValorantStreamOverlay
                     {
                         if (game["CompetitiveMovement"] != "MOVEMENT_UNKNOWN")
                         {
-                            currentRP = game["TierProgressAfterUpdate"];
+                            currentRP = game["RankedRatingAfterUpdate"];
                             return game["TierAfterUpdate"];
                         }
                     }
@@ -95,7 +97,7 @@ namespace ValorantStreamOverlay
             LogicHandler.ValorantOver.rankIconBox.Image = myImage;
 
             LogicHandler.ValorantOver.rankPointsElo.Text =
-                $"{currentRP} RP | {(rankNumber * 100) - 300 + currentRP} ELO";
+                $"{currentRP} RR | {(rankNumber * 100) - 300 + currentRP} TRR";
 
             LogicHandler.currentMMRorELO = (rankNumber * 100) - 300 + currentRP;
             LogicHandler.currentRankPoints = currentRP;

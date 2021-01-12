@@ -152,8 +152,8 @@ namespace ValorantStreamOverlay
                     else if (game["CompetitiveMovement"] == "PROMOTED")
                     {
                         // player promoted
-                        int before = game["TierProgressBeforeUpdate"];
-                        int after = game["TierProgressAfterUpdate"];
+                        int before = game["RankedRatingBeforeUpdate"];
+                        int after = game["RankedRatingAfterUpdate"];
                         int differ = (after - before) + 100; 
                         points[i++] = differ;
                         count++;
@@ -161,16 +161,16 @@ namespace ValorantStreamOverlay
                     else if (game["CompetitiveMovement"] == "DEMOTED")
                     {
                         // player demoted
-                        int before = game["TierProgressBeforeUpdate"];
-                        int after = game["TierProgressAfterUpdate"];
+                        int before = game["RankedRatingBeforeUpdate"];
+                        int after = game["RankedRatingAfterUpdate"];
                         int differ = (after - before) - 100; 
                         points[i++] = differ;
                         count++;
                     }
                     else
                     {
-                        int before = game["TierProgressBeforeUpdate"];
-                        int after = game["TierProgressAfterUpdate"];
+                        int before = game["RankedRatingBeforeUpdate"];
+                        int after = game["RankedRatingAfterUpdate"];
                         points[i++] = after - before;
                         count++;
                     }
