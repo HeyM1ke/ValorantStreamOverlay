@@ -51,7 +51,7 @@ namespace ValorantStreamOverlay
 
                     foreach (var game in matches)
                     {
-                        if (game["CompetitiveMovement"] != "MOVEMENT_UNKNOWN")
+                        if (game["RankedRatingAfterUpdate"] != 0)
                         {
                             currentRP = game["RankedRatingAfterUpdate"];
                             return game["TierAfterUpdate"];

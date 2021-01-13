@@ -145,11 +145,11 @@ namespace ValorantStreamOverlay
                 foreach (var game in matches)
                 {
 
-                    if (game["CompetitiveMovement"] == "MOVEMENT_UNKNOWN")
+                    if (game["TierAfterUpdate"] == 0)
                     {
-                        // not a ranked game
+                        // riot said fuck off to this one i guess LMAO
                     }
-                    else if (game["CompetitiveMovement"] == "PROMOTED")
+                    else if (game["TierAfterUpdate"] > game["TierBeforeUpdate"]) // Promoted meaning, that afterupdate is more than beforeupdate
                     {
                         // player promoted
                         int before = game["RankedRatingBeforeUpdate"];
@@ -158,7 +158,7 @@ namespace ValorantStreamOverlay
                         points[i++] = differ;
                         count++;
                     }
-                    else if (game["CompetitiveMovement"] == "DEMOTED")
+                    else if (game["TierAfterUpdate"] < game["TierBeforeUpdate"])
                     {
                         // player demoted
                         int before = game["RankedRatingBeforeUpdate"];
