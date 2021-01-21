@@ -12,8 +12,8 @@
     <PackageIcon>icon.png</PackageIcon>
     <RepositoryUrl>https://github.com/RumbleMike/ValorantStreamOverlay</RepositoryUrl>
     <PackageReleaseNotes>https://github.com/RumbleMike/ValorantStreamOverlay/releases/latest</PackageReleaseNotes>
-    <AssemblyVersion>2.0.0.1</AssemblyVersion>
-    <FileVersion>2.0.0.0</FileVersion>
+    <AssemblyVersion>2.0.0.2</AssemblyVersion>
+    <FileVersion>2.0.0.2</FileVersion>
     <SignAssembly>false</SignAssembly>
     <AssemblyOriginatorKeyFile>test.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>

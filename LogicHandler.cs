@@ -193,6 +193,9 @@ namespace ValorantStreamOverlay
 
             compRequest.AddHeader("Authorization", $"Bearer {AccessToken}");
             compRequest.AddHeader("X-Riot-Entitlements-JWT", EntitlementToken);
+            compRequest.AddHeader("X-Riot-ClientPlatform",
+                "ew0KCSJwbGF0Zm9ybVR5cGUiOiAiUEMiLA0KCSJwbGF0Zm9ybU9TIjogIldpbmRvd3MiLA0KCSJwbGF0Zm9ybU9TVmVyc2lvbiI6ICIxMC4wLjE5MDQyLjEuMjU2LjY0Yml0IiwNCgkicGxhdGZvcm1DaGlwc2V0IjogIlVua25vd24iDQp9");
+
 
             IRestResponse rankedResp = compClient.Get(compRequest);
 
