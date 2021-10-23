@@ -12,6 +12,9 @@
   
 </p>
 
+## THANK YOU! 
+Hello Everyone, Im highly appriative of all the support with the program and to the thousnads of users who still use the program today. I will be updating the program and implementing it into a new service which is currently in development. The Code is (although messy) now archived as i will no longer be updating this version. Please understand there will be a new version that is going to push out once it is prepared to all current clients. The program still works as of 10/23. Please continue to enjoy the program and look forward to the updated version!
+
 ## Episode 2 will include Rank Rating in game, program will continue to function. Remember this is a streamoverlay.
 
 
