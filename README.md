@@ -29,12 +29,18 @@ Some External Packages were used to create this project with ease and implement 
   - [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/)
   - [AutoUpdater](https://github.com/ravibpatel/AutoUpdater.NET)
 
-## How to use program
-Welcome to the Tutorial watch video below!
+## Setup and Installation
+1. Download and install [.NET Core 3.1 Runtime x86](https://dotnet.microsoft.com/download/dotnet-core/3.1/runtime/)
+2. Download the [latest release](https://github.com/RumbleMike/ValorantStreamOverlay/releases) of ValorantStreamOverlay
+3. Run ValorantStreamOverlay.exe
+4. Right click anywhere in the window and select Settings
+5. Enter your Riot ID and Password
+6. Select your region
+7. Optional: Select a skin and refresh rate
+8. Click Apply
+9. Reopen ValorantStreamOverlay.exe
 
-# Installation
-Watch Video https://youtu.be/cP3Ly3-4kSI
-
+Click the banner below for a video tutorial
 [![Watch the video](https://i.imgur.com/ZPAafXu.png)](https://youtu.be/cP3Ly3-4kSI)
 
 # Message For Riot
