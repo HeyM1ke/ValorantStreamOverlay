@@ -172,6 +172,7 @@ namespace ValorantStreamOverlay
             this.ClientSize = new System.Drawing.Size(398, 143);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ValorantOverStream";
             this.Text = "Valorant Overlay";
